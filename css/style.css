@@ -393,7 +393,7 @@ h2.category-title::after {
     display: block;
     object-fit: cover;
     min-height: 300px; /* Sesuaikan tinggi minimum sesuai kebutuhan */
-    max-height: 700px; /* Opsional: batasi tinggi maksimal gambar */
+    max-height: 750px; /* Opsional: batasi tinggi maksimal gambar */
 }
 
 .hero-caption {
