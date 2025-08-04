@@ -48,10 +48,35 @@
     </header>
 
     <main>
-        <section class="hero-section">
-			<img src="images/hero-bg.jpg" alt="Gambar Perusahaan JVCKENWOOD">
-			<div class="hero-caption">
-				<p>Creating excitement and peace of mind<br>for the people of the world</p>	
+        <section class="hero-slider">
+			<div class="slider-container">
+				<div class="slide">
+					<img src="images/hero-bg.jpg" alt="Gambar Perusahaan JVCKENWOOD">
+					<div class="hero-caption">
+						<p>Creating excitement and peace of mind<br>for the people of the world</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="images/mining.jpg" alt="Aplikasi JVCKENWOOD di industri pertambangan">
+					<div class="hero-caption">
+						<p>Solusi Komunikasi Terpercaya untuk Industri Pertambangan</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="images/oil.jpg" alt="Gambar kedua dari aplikasi industri">
+					<div class="hero-caption">
+						<p>Inovasi Teknologi untuk Keamanan dan Efisiensi</p>
+					</div>
+				</div>
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<div class="dot-container">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
 			</div>
 		</section>
 
@@ -151,7 +176,8 @@
     <span class="whatsapp-caption">Contact Our Sales</span>
     <i class="fab fa-whatsapp"></i>
 	</a>
-
-    <script src="js/script.js"></script>
+	
+	<script src="js/script.js"></script>
+	
 </body>
 </html>
