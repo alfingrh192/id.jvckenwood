@@ -50,7 +50,7 @@
 	</header>
 
     <div class="container">
-        <h1>DMR / NXDN Radios</h1>
+        <h1>DMR / NXDN Radio</h1>
 
         <div class="category-section">
             <h2 class="category-title">NX-1000 Series</h2>
@@ -139,7 +139,7 @@
 
 		</div>
 
- </div> <footer class="main-footer">
+<footer class="main-footer">
         <div class="footer-content">
             <div class="footer-section footer-contact">
                 <h3>Contact Us</h3>
@@ -155,118 +155,22 @@
             <p>&copy; 2025 JVCKenwood Indonesia. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <a href="https://wa.me/6281?text=Hello%2C%20I%27m%20interested%20in%20your%20Kenwood%20radio%20communication%20products."
-         class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <span class="whatsapp-caption">Contact Our Sales</span> <i class="fab fa-whatsapp"></i>
-    </a>
-
-	<div id="imageModal" class="image-modal">
-		<span class="close-modal">&times;</span>
-		<img class="modal-content" id="zoomedImage" />
+	
+	<a href="whatsapp://send?phone=6281119727887&text=Hello%20I%20am%20interested%20in%20your%20Kenwood%20radio%20communication%20products." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <span class="whatsapp-caption">Contact Our Sales</span>
+    <i class="fab fa-whatsapp"></i>
+	</a>
+	
+	<script src="js/script.js"></script>
+	
+	<!-- Modal Struktur -->
+	<div id="imageModal" class="modal">
+		<span class="close">&times;</span>
+		<div class="modal-content">
+			<div class="modal-image-container">
+				<img id="modalImg" src="" alt="Gambar Produk">
+			</div>
+		</div>
 	</div>
-
-<script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const mainNav = document.getElementById('mainNav');
-
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            // Close any open dropdowns when main nav is toggled
-            document.querySelectorAll('.has-dropdown.expanded').forEach(dropdown => {
-                dropdown.classList.remove('expanded');
-            });
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mainNav a').forEach(item => {
-            item.addEventListener('click', (event) => {
-                if (window.innerWidth <= 768) {
-                    const parentLi = item.closest('li.has-dropdown');
-                    if (parentLi) {
-                        // If it's a dropdown parent link, prevent default to toggle dropdown
-                        event.preventDefault();
-                        parentLi.classList.toggle('expanded');
-                    } else {
-                        // If not a dropdown parent, close the entire mobile menu
-                        mainNav.classList.remove('active');
-                    }
-                }
-            });
-        });
-
-        // === Script for Active Nav Link ===
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname.split('/').pop(); // Get the current file name (e.g., products-ht.html)
-            const navLinks = document.querySelectorAll('.main-nav > ul > li > a'); // Only top-level links
-
-            navLinks.forEach(link => {
-                const linkPath = link.href.split('/').pop();
-                // Check if the current path matches the link path, or if it's the home page
-                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
-                    link.classList.add('active');
-                } else {
-                    // Remove active class from other links (important for dropdowns)
-                    link.classList.remove('active');
-                }
-            });
-
-            // Adjust active state for parent dropdowns if a sub-item is active
-            const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
-            dropdownLinks.forEach(subLink => {
-                const subLinkPath = subLink.href.split('/').pop();
-                if (subLinkPath === currentPath) {
-                    subLink.classList.add('active');
-                    // Find the parent dropdown link and add active class to it
-                    const parentDropdownLi = subLink.closest('.has-dropdown');
-                    if (parentDropdownLi) {
-                        const parentLink = parentDropdownLi.querySelector(':scope > a'); // Select direct child <a>
-                        if (parentLink) {
-                            parentLink.classList.remove('active'); // Remove active from parent if sub-link is active
-                            // Note: If you want the parent to also be 'active' when a sub-item is active, change `remove` to `add` above.
-                            // The current setup ensures only the *specific* active link (sub-link) has the 'active' style.
-                            // If you prefer the parent link to also show active, change 'remove' to 'add' for `parentLink.classList.add('active');`
-                            // For a clean look, often only the exact active page link is highlighted.
-                        }
-                    }
-                } else {
-                    subLink.classList.remove('active');
-                }
-            });
-        });
-		
-		const modal = document.getElementById("imageModal");
-		const modalImg = document.getElementById("zoomedImage");
-		const closeBtn = document.querySelector(".close-modal");
-
-		// Klik gambar: tampilkan modal
-		document.querySelectorAll(".product-card img").forEach(img => {
-			img.addEventListener("click", function () {
-				modal.style.display = "flex";
-				modalImg.src = this.src;
-				modalImg.alt = this.alt;
-			});
-		});
-
-		// Tombol close
-		closeBtn.onclick = function () {
-			modal.style.display = "none";
-		};
-
-		// Klik luar gambar
-		modal.addEventListener("click", function (e) {
-			if (e.target === modal) {
-				modal.style.display = "none";
-			}
-		});
-
-		// Tombol ESC
-		document.addEventListener("keydown", function (e) {
-			if (e.key === "Escape" && modal.style.display === "flex") {
-				modal.style.display = "none";
-			}
-		});
-		
-</script>
 </body>
 </html>

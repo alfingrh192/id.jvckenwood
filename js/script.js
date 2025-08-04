@@ -1,55 +1,47 @@
-// =======================================
+// =======================================================
 // GLOBAL VARIABLES & FUNCTIONS FOR SLIDER
-// =======================================
+// =======================================================
 let slideIndex = 1;
 let sliderContainer;
 let slides;
 let dots;
 
 // Fungsi untuk navigasi tombol "Next" dan "Previous"
-// Fungsi ini harus berada di scope global agar bisa diakses dari onclick di HTML
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
 // Fungsi untuk navigasi dot
-// Fungsi ini juga harus berada di scope global
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
 // Fungsi utama untuk menampilkan slide
-// Fungsi ini juga harus di scope global
 function showSlides(n) {
     if (!sliderContainer || slides.length === 0) {
-        return; // Menghentikan fungsi jika elemen tidak ditemukan
+        return;
     }
     
-    // Loop kembali ke slide pertama jika sudah di akhir
     if (n > slides.length) {
         slideIndex = 1;
     }
-    // Loop ke slide terakhir jika sudah di awal
     if (n < 1) {
         slideIndex = slides.length;
     }
     
-    // Perbarui posisi slider dengan efek geser
     const offset = -(slideIndex - 1) * 100;
     sliderContainer.style.transform = `translateX(${offset}%)`;
 
-    // Perbarui indikator dot
     dots.forEach(dot => dot.classList.remove("active-dot"));
     if (dots[slideIndex - 1]) {
         dots[slideIndex - 1].classList.add("active-dot");
     }
 }
 
-
-// =======================================
+// =======================================================
 // DOMContentLoaded Listener
 // Semua inisialisasi diletakkan di sini
-// =======================================
+// =======================================================
 document.addEventListener('DOMContentLoaded', function() {
     // --- MOBILE MENU & DROPDOWN TOGGLE ---
     const mobileMenu = document.getElementById('mobile-menu');
@@ -114,47 +106,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- SLIDER INITIALIZATION ---
-    // Menginisialisasi variabel slider setelah DOM dimuat
     sliderContainer = document.querySelector(".slider-container");
     slides = document.querySelectorAll(".slide");
     dots = document.querySelectorAll(".dot");
     
-    // Menjalankan fungsi slider untuk pertama kali
     if (slides.length > 0) {
         showSlides(slideIndex);
     }
-    
-    // --- IMAGE MODAL / LIGHTBOX ---
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("zoomedImage");
-    const closeBtn = document.querySelector(".close-modal");
 
-    document.querySelectorAll(".product-card img").forEach(img => {
-        img.addEventListener("click", function() {
-            if (modal && modalImg) {
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-            }
+    // --- MODAL ZOOM GAMBAR (diperbaiki) ---
+    // Ambil elemen-elemen modal dari DOM
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".close");
+    
+    // Ambil semua gambar yang memiliki class 'zoomable-img'
+    const zoomableImages = document.querySelectorAll(".zoomable-img");
+
+    // Loop melalui setiap gambar dan tambahkan event listener
+    zoomableImages.forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "flex"; // Kunci: Ubah dari "block" menjadi "flex"
+            modalImg.src = img.src;
         });
     });
 
-    if (closeBtn) {
-        closeBtn.onclick = function() {
-            if (modal) modal.style.display = "none";
-        };
-    }
+    // Event listener untuk tombol close (X)
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
 
-    if (modal) {
-        modal.addEventListener("click", function(e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    }
+    // Event listener untuk klik di luar gambar modal (latar belakang gelap)
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 
-    document.addEventListener("keydown", function(e) {
-        if (e.key === "Escape" && modal && modal.style.display === "flex") {
+    // Event listener untuk tombol 'Esc' pada keyboard
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.style.display === "flex") { // Kunci: Cek apakah modal.style.display adalah "flex"
             modal.style.display = "none";
         }
     });

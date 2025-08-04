@@ -182,119 +182,119 @@ h2.category-title::after {
 }
 
 /* ======================================= */
-/* PRODUCT CARD STYLES           */
+/* PRODUCT CARD STYLES                     */
 /* ======================================= */
 .product-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  padding: 25px;
-  margin-bottom: 25px;
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  align-items: center;
-  transition: all 0.3s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: stretch; /* Makes flex items (image & product-info) have equal height */
+    transition: all 0.3s ease;
 }
 
 .product-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
 }
 
 .product-card:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .product-card img {
-  width: 200px;
-  height: auto;
-  max-height: 200px; /* Pastikan gambar tidak terlalu tinggi */
-  object-fit: contain;
-  background-color: #fcfcfc;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
+    width: 220px; /* Consistent width */
+    height: auto; /* Let height adjust proportionally */
+    max-height: 300px; /* Increased max-height for potentially longer product-info */
+    object-fit: contain; /* Keeps image proportions within its container */
+    background-color: #fcfcfc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .product-card img:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .product-info {
-  flex: 1;
-  min-width: 280px;
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-info h3 {
-  font-family: 'Poppins', sans-serif;
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5em;
 }
 
-/* Menghilangkan p (description) jika ada di .product-info, jaga agar tidak mempengaruhi h3/ul */
-.product-info p:not(.role) { /* Target p yang bukan .role */
-  font-size: 0.95em;
-  margin-bottom: 15px;
-  color: var(--light-text);
-  display: none; /* Menyembunyikan elemen p yang bukan .role */
+.product-info p:not(.role) {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: var(--light-text);
 }
-
 
 .product-info ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 20px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: auto; /* Pushes the button to the bottom */
+    flex-grow: 1; /* Allows UL to take remaining space if content above is short */
 }
 
 .product-info li {
-  margin-bottom: 8px;
-  font-size: 0.9em;
-  color: var(--text-color);
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.5;
 }
 
 .product-info li .icon {
-  display: inline-block;
-  margin-right: 8px;
-  line-height: 1;
+    display: inline-block;
+    margin-right: 8px;
+    line-height: 1;
+    font-size: 1.1em;
 }
 
 .product-info li .icon i {
-  vertical-align: middle;
-  font-size: 1.1em;
-  width: 1.2em;
-  text-align: center;
+    vertical-align: middle;
+    font-size: 1.1em;
+    width: 1.2em;
+    text-align: center;
 }
 
 .btn-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 15px;
-  background-color: var(--accent-color);
-  color: white;
-  padding: 12px 22px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
 .btn-download:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.btn-download .icon-download {
-  font-size: 1.1em;
+    background-color: #2980b9; /* Slightly darker blue from --accent-color */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ======================================= */
