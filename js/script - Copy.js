@@ -45,51 +45,42 @@ function showSlides(n) {
 document.addEventListener('DOMContentLoaded', function() {
     
     // --- MOBILE MENU & DROPDOWN TOGGLE ---
-    const mobileMenu = document.getElementById('menuToggle'); // Perbaikan ID
+    const mobileMenu = document.getElementById('mobile-menu');
     const mainNav = document.getElementById('mainNav');
     
-    // REVISI: Mendapatkan elemen-elemen untuk mega menu
-    const hasDropdownLi = document.querySelector('.main-nav .has-dropdown');
-    const megaMenu = document.getElementById('megaMenu');
-
     if (mobileMenu) {
         mobileMenu.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // Menutup mega menu saat mobile menu di-toggle
-            if (!mainNav.classList.contains('active') && megaMenu) {
-                megaMenu.style.opacity = '0';
-                megaMenu.style.visibility = 'hidden';
-                megaMenu.style.transform = 'translateY(20px)';
-                megaMenu.style.pointerEvents = 'none';
+            // Menutup semua dropdown jika menu utama ditutup
+            if (!mainNav.classList.contains('active')) {
+                document.querySelectorAll('.has-dropdown.expanded').forEach(dropdown => {
+                    dropdown.classList.remove('expanded');
+                });
             }
         });
     }
 
-    // --- LOGIKA MEGA MENU & DROPDOWN ---
-    if (hasDropdownLi && megaMenu) {
-        // Penanganan Event pada Desktop (hover)
-        hasDropdownLi.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 768) {
-                megaMenu.style.opacity = '1';
-                megaMenu.style.visibility = 'visible';
-                megaMenu.style.transform = 'translateY(0)';
-                megaMenu.style.pointerEvents = 'auto';
-            }
-        });
+    // Menggabungkan logika dropdown dan penutupan menu mobile
+    mainNav.addEventListener('click', (e) => {
+        // Logika untuk dropdown
+        if (e.target.closest('.has-dropdown') && window.innerWidth <= 768) {
+            e.preventDefault();
+            const parentLi = e.target.closest('.has-dropdown');
+            parentLi.classList.toggle('expanded');
+        }
 
-        hasDropdownLi.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 768) {
-                megaMenu.style.opacity = '0';
-                megaMenu.style.visibility = 'hidden';
-                megaMenu.style.transform = 'translateY(20px)';
-                megaMenu.style.pointerEvents = 'none';
+        // Logika untuk penutupan menu saat klik tautan non-dropdown
+        if (e.target.tagName === 'A' && !e.target.closest('.has-dropdown')) {
+            if (window.innerWidth <= 768) {
+                mainNav.classList.remove('active');
             }
-        });
-    }
+        }
+    });
 
-    // --- LOGIKA ACTIVE NAVIGATION LINK ---
-    const allNavLinks = document.querySelectorAll('.main-nav a');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    // --- ACTIVE NAVIGATION LINK ---
+    const allNavLinks = document.querySelectorAll('#mainNav a');
+    // Jika path kosong (halaman utama), default ke 'index.html'
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html'; 
 
     allNavLinks.forEach(link => {
         const linkPath = link.href.split('/').pop();
@@ -97,11 +88,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (linkPath === currentPath) {
             link.classList.add('active');
             
+            // Jika yang aktif adalah sub-link, hapus class 'active' dari parent-nya
             const parentLi = link.closest('.has-dropdown');
             if (parentLi) {
                 const parentLink = parentLi.querySelector(':scope > a');
                 if (parentLink) {
-                    parentLink.classList.add('active');
+                    parentLink.classList.remove('active');
                 }
             }
         } else {
@@ -123,12 +115,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImg = document.getElementById("modalImg");
     const closeBtn = document.querySelector(".close");
     
+    // Ambil semua gambar yang memiliki class 'zoomable-img' (pastikan Anda menambahkan kelas ini di HTML)
     const zoomableImages = document.querySelectorAll(".zoomable-img");
 
     if (modal && modalImg && closeBtn) {
         zoomableImages.forEach(img => {
             img.addEventListener("click", () => {
-                modal.style.display = "flex";
+                modal.style.display = "flex"; // Gunakan 'flex' agar gambar bisa di-align
                 modalImg.src = img.src;
             });
         });
@@ -149,25 +142,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // --- MENUTUP MEGA MENU DAN MOBILE NAV KETIKA RESIZE LAYAR ---
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            mainNav.classList.remove('active');
-            if (megaMenu) {
-                megaMenu.style.opacity = '0';
-                megaMenu.style.visibility = 'hidden';
-                megaMenu.style.transform = 'translateY(20px)';
-                megaMenu.style.pointerEvents = 'none';
-            }
-        }
-    });
-
-    // --- MENUTUP MOBILE NAV SAAT KLIK DI LUAR AREA NAV ---
-    document.addEventListener('click', function(e) {
-        const isClickInsideNav = mainNav.contains(e.target) || (mobileMenu && mobileMenu.contains(e.target));
-        if (window.innerWidth <= 768 && mainNav.classList.contains('active') && !isClickInsideNav) {
-            mainNav.classList.remove('active');
-        }
-    });
 });
