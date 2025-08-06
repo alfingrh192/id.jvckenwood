@@ -51,21 +51,6 @@ body {
     flex-grow: 1;
 }
 
-.section-title {
-    text-align: center;
-    
-    /* Ubah warna garis menjadi abu-abu terang */
-    border-bottom: 2px solid #ccc;
-    
-    padding-bottom: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.8em;
-    margin-bottom: 40px;
-	margin-top: 30px; 
-    color: var(--primary-color);
-}
-
 h1,
 h2,
 h3 {
@@ -84,7 +69,7 @@ ul {
 }
 
 /* ======================================================= */
-/* HEADER STYLES (REVISI)                                  */
+/* HEADER STYLES                                           */
 /* ======================================================= */
 .main-header {
     background-color: var(--header-bg);
@@ -108,28 +93,24 @@ ul {
 }
 
 .logo {
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .logo img {
     height: 50px;
-	vertical-align: middle;
-	margin-left: 20px; 
+    width: auto;
 }
 
 .main-nav {
     display: flex;
     flex-grow: 1;
-    justify-content: right;
-	margin-right: 20px;
+    justify-content: center;
 }
 
 .main-nav ul {
     display: flex;
-    align-items: right;
-    gap: 55px;
-    padding-left: 0;
-    margin: 0;
+    align-items: center;
+    gap: 30px;
 }
 
 .main-nav li {
@@ -180,22 +161,16 @@ ul {
     transition: transform 0.3s ease;
 }
 
-.search-box-li {
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-
 .search-box {
     display: flex;
     align-items: center;
     position: relative;
-    width: 300px;
+    width: 250px;
 }
 
 .search-input {
     width: 100%;
-    padding: 10px 35px 10px 15px;
+    padding: 8px 35px 8px 15px;
     border: 1px solid var(--border-color);
     border-radius: 20px;
     font-size: 0.9em;
@@ -233,153 +208,62 @@ ul {
 }
 
 /* ======================================================= */
-/* DROPDOWN MENU / MEGA MENU STYLES (REVISI FINAL)         */
+/* DROPDOWN MENU / MEGA MENU STYLES (FULL-WIDTH)           */
 /* ======================================================= */
-.main-nav .has-dropdown {
-    position: relative;
+
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .dropdown-menu {
-    position: absolute;
-    /* Celah yang Anda inginkan */
-    top: 123%;
-    
-    /* Gunakan left dan transform untuk memusatkan menu */
-    left: 50%;
-    transform: translateX(-50%);
-    
-    /* Lebar menu yang terkontrol */
-    width: 700px;
-    max-width: none;
-    
-    background-color: var(--card-bg);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    border-radius: 0 0 8px 8px;
-    overflow: hidden;
-    padding: 30px 0;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.1s ease, visibility 0.1s ease, transform 0.1s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 1000;
+  min-width: 720px;
 }
 
-/* Gunakan kelas .hover-active untuk menampilkan menu saat di-hover */
-.hover-active .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0) translateX(-50%);
+/* 3 Kolom horizontal */
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.dropdown-link .dropdown-arrow {
-    transition: transform 0.3s ease;
+.dropdown-column h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
 }
 
-.hover-active .dropdown-link .dropdown-arrow {
-    transform: rotate(180deg);
+.dropdown-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.product-dropdown-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
-    text-align: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+.dropdown-column ul li {
+  margin-bottom: 6px;
 }
 
-.product-dropdown-grid h4 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 8px;
+.dropdown-column ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.product-dropdown-grid ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-}
-
-.product-dropdown-grid ul a {
-    color: var(--text-color);
-    padding: 8px 0;
-    font-weight: 400;
-    display: block;
-    transition: color 0.2s ease;
-}
-
-.product-dropdown-grid a:hover {
-    color: var(--accent-color);
-    background-color: transparent;
-}
-
-/* ======================================================= */
-/* GENERAL CONTENT STYLES                                  */
-/* ======================================================= */
-.section-light {
-    background-color: var(--light-bg);
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.section-white {
-    background-color: var(--card-bg);
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.section-title.main-section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 2.5em;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.section-title.main-section-title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-}
-
-.category-title {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 1.8em;
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.category-title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-}
-
-.category-section {
-    margin-bottom: 50px;
+.dropdown-column ul li a:hover {
+  color: #007bff;
 }
 
 /* ======================================================= */
@@ -519,30 +403,20 @@ ul {
     margin-bottom: 0;
 }
 
-.product-card .image-wrapper {
-    position: relative;
+.product-card img {
     width: 220px;
-    overflow: hidden;
-    flex-shrink: 0;
+    height: 220px;
+    object-fit: contain;
+    background-color: #fcfcfc;
+    padding: 15px;
     border-radius: 8px;
     border: 1px solid #eee;
-    background-color: #fcfcfc;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
     cursor: zoom-in;
 }
 
-.product-card .image-wrapper img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 15px;
-}
-
-.product-card .image-wrapper:hover {
+.product-card img:hover {
     transform: scale(1.03);
 }
 
@@ -560,8 +434,7 @@ ul {
     margin-bottom: 10px;
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 1.3em;
-	margin-bottom: 10px;
+    font-size: 1.5em;
 }
 
 .product-info p:not(.role) {
@@ -581,12 +454,12 @@ ul {
     display: inline-block;
     margin-right: 8px;
     line-height: 1;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .product-info li .icon i {
     vertical-align: middle;
-    font-size: 1em;
+    font-size: 1.1em;
     width: 1.2em;
     text-align: center;
 }
@@ -1001,10 +874,10 @@ ul {
 }
 
 /* ======================================================= */
-/* MODAL STYLES (VERSI FINAL)                              */
+/* MODAL STYLES                                            */
 /* ======================================================= */
 .modal {
-    display: none; /* Sembunyikan modal secara default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -1018,30 +891,31 @@ ul {
     padding: 20px;
 }
 
-/* Kelas ini harus ditambahkan/dihapus oleh JavaScript */
-.modal.active {
-    display: flex;
+.modal-content {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation-name: modalzoom;
+    animation-duration: 0.4s;
+    box-sizing: border-box;
+    padding: 30px;
 }
 
-.modal-content {
-    /* Ini adalah container untuk gambar dengan ukuran tetap */
-    width: 500px;
-    height: 500px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    box-sizing: border-box;
+.modal-image-container {
+    width: 600px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 8px;
 }
 
 #modalImg {
-    /* Gambar akan menyesuaikan diri agar muat di dalam container */
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Memastikan gambar tidak terpotong */
+    object-fit: contain;
     display: block;
 }
 
@@ -1055,25 +929,25 @@ ul {
 }
 
 .close {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--text-color);
+    font-size: 35px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 1002;
+    z-index: 1001;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .close:hover,
 .close:focus {
-    color: #ccc;
+    color: var(--primary-color);
     transform: scale(1.1);
 }
 
 /* ======================================================= */
-/* RESPONSIVE ADJUSTMENTS (REVISI)                        */
+/* RESPONSIVE ADJUSTMENTS                                  */
 /* ======================================================= */
 @media (max-width: 960px) {
     .container {
@@ -1091,11 +965,7 @@ ul {
     }
 
     .logo img {
-        height: 50px;
-    }
-
-    .header-inner {
-        padding: 0 15px;
+        height: 40px;
     }
 
     .main-nav {
@@ -1130,16 +1000,9 @@ ul {
     .main-nav li:last-child {
         border-bottom: none;
     }
-    
-    .search-box-li {
+
+    .main-nav .search-box-li {
         padding: 15px 0;
-        margin-left: 0;
-    }
-    
-    .search-box {
-        width: 80%;
-        max-width: 300px;
-        margin: 0 auto;
     }
 
     .main-nav a {
@@ -1151,11 +1014,18 @@ ul {
         display: none;
     }
 
+    .search-box {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
     .menu-toggle {
         display: block;
         font-size: 1.8em;
     }
 
+    /* DROPDOWN FOR MOBILE */
     .dropdown-menu {
         position: static;
         width: auto;
@@ -1195,6 +1065,7 @@ ul {
         padding-bottom: 0;
     }
 
+    /* Menonaktifkan efek hover pada mobile */
     .has-dropdown:hover .dropdown-menu {
         opacity: 1;
         visibility: visible;
@@ -1269,7 +1140,7 @@ ul {
     }
 
     .whatsapp-float i {
-        font-size: 30px;
+        font-size: 50px;
         margin: 0;
     }
 
