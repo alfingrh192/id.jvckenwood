@@ -6,7 +6,7 @@
     <title>Radio Communication Products Catalog - JVC Kenwood Indonesia</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="main-header">
@@ -14,61 +14,73 @@
             <div class="logo">
                 <a href="index.html"><img src="images/kenwood.png" alt="Company Logo"></a>
             </div>
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="index.html" id="navHome">Home</a></li>
-                    <li class="has-dropdown" id="products-dropdown-parent">
-                        <a href="#" class="dropdown-link">
-                            Products
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </a>
-                        <div class="dropdown-menu" id="products-dropdown">
-                            <div class="container">
-                                <div class="product-dropdown-grid">
-                                    <div>
-                                        <h4>Analog Radio</h4>
-                                        <ul>
-                                            <li><a href="analog-ht.html">Portable Radio</a></li>
-                                            <li><a href="analog-mobile.html">Mobile Radio</a></li>
-                                            <li><a href="analog-base.html">Base Station</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4>DMR/NXDN Radio</h4>
-                                        <ul>
-                                            <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
-                                            <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
-                                            <li><a href="dmr-nxdn-base.html">Base Station</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4>P25 Radio</h4>
-                                        <ul>
-                                            <li><a href="p25-ht.html">Portable Radio</a></li>
-                                            <li><a href="p25-mobile.html">Mobile Radio</a></li>
-                                            <li><a href="p25-base.html">Base Station</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="search-box-li">
-                        <form class="search-box" id="search-form">
-                            <input type="text" placeholder="Search products..." class="search-input" id="search-input">
-                            <button type="submit" class="search-icon" id="search-button"><i class="fas fa-search"></i></button>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
+            
+            <!-- Tambahkan div ini untuk penataan mobile yang lebih baik -->
+            <div class="header-menu-container">
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Dropdown products dengan nested structure -->
+                        <li class="has-dropdown" id="products-dropdown-parent">
+                            <a href="#" class="dropdown-link">
+                                Products
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        Analog Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="analog-ht.html">Portable Radio</a></li>
+                                        <li><a href="analog-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="analog-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        DMR/NXDN Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
+                                        <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="dmr-nxdn-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        P25 Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="p25-ht.html">Portable Radio</a></li>
+                                        <li><a href="p25-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="p25-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search-form" id="search-form">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <div class="container main-content">
-        <h1 class="section-title">Portable Radio (HT)</h1>
-        
-        <div id="search-results">
+    <div id="search-results">
             </div>
+    
+    <div class="container main-content" id="main-content-wrapper">
+        <h1 class="section-title">Portable Radio (HT)</h1>
 
         <div class="category-section">
             <h2 class="category-title">NX-1000 Series</h2>
@@ -217,13 +229,21 @@
         </div>
     </div>
 
-    <script src="js/fuse.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/search.js"></script>
-    
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImg">
     </div>
+
+    <script src="js/fuse.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+    
 </body>
+
 </html>
+
+
+
+
+
+
