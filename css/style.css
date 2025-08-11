@@ -1678,3 +1678,54 @@ ul {
         height: 50px;
     }
 }
+
+/* ======================================================= */
+/* MEDIA QUERIES KHUSUS UNTUK LAYAR SANGAT SEMPIT (<380px) */
+/* ======================================================= */
+@media (max-width: 380px) {
+    .header-inner {
+        padding: 0 5px; /* Padding sisi dikurangi lagi menjadi 5px */
+    }
+
+    .logo img {
+        height: 35px; /* Ukuran logo sedikit lebih kecil */
+    }
+
+    .menu-toggle {
+        font-size: 1.6em; /* Sedikit mengurangi font-size hamburger */
+    }
+    
+    .main-nav ul {
+        padding: 0 5px; /* Padding container `<ul>` diperkecil */
+    }
+    
+    .search-box-li {
+        padding: 10px 5px 0;
+    }
+
+    .dropdown-menu li a {
+        padding: 8px 12px; /* Mengurangi padding link dropdown */
+        font-size: 0.9em;
+    }
+
+    .sub-dropdown-menu li a {
+        padding: 8px 20px; /* Mengurangi padding link sub-dropdown */
+        font-size: 0.9em;
+    }
+    
+    .whatsapp-float {
+        bottom: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .whatsapp-float i {
+        font-size: 25px;
+    }
+
+    .whatsapp-float:hover {
+        width: 45px;
+        height: 45px;
+    }
+}
