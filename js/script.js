@@ -1,24 +1,25 @@
 // =======================================================
-// GLOBAL VARIABLES & FUNCTIONS FOR SLIDER
+// GLOBAL VARIABLES & FUNCTIONS
 // =======================================================
-let slideIndex = 1;
-let sliderContainer;
-let slides;
-let dots;
 
-// Fungsi untuk navigasi tombol "Next" dan "Previous"
+// --- SLIDER ---
+let slideIndex = 1;
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Fungsi untuk navigasi dot
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-// Fungsi utama untuk menampilkan slide
 function showSlides(n) {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    const dots = document.querySelectorAll('.hero-slider .dot');
+    const sliderContainer = document.querySelector('.hero-slider .slider-container');
+
     if (!sliderContainer || slides.length === 0) {
+        console.warn("Slider elements are not initialized correctly.");
         return;
     }
     
@@ -32,142 +33,122 @@ function showSlides(n) {
     const offset = -(slideIndex - 1) * 100;
     sliderContainer.style.transform = `translateX(${offset}%)`;
 
-    dots.forEach(dot => dot.classList.remove("active-dot"));
-    if (dots[slideIndex - 1]) {
-        dots[slideIndex - 1].classList.add("active-dot");
+    if (dots.length > 0) {
+        dots.forEach(dot => dot.classList.remove("active-dot"));
+        if (dots[slideIndex - 1]) {
+            dots[slideIndex - 1].classList.add("active-dot");
+        }
     }
 }
 
 // =======================================================
-// DOMContentLoaded Listener
-// Semua inisialisasi diletakkan di sini
+// EVENT LISTENERS & INITIALIZATION
 // =======================================================
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- MOBILE MENU & DROPDOWN TOGGLE ---
-    const mobileMenu = document.getElementById('menuToggle'); // Perbaikan ID
-    const mainNav = document.getElementById('mainNav');
-    
-    // REVISI: Mendapatkan elemen-elemen untuk mega menu
-    const hasDropdownLi = document.querySelector('.main-nav .has-dropdown');
-    const megaMenu = document.getElementById('megaMenu');
 
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            // Menutup mega menu saat mobile menu di-toggle
-            if (!mainNav.classList.contains('active') && megaMenu) {
-                megaMenu.style.opacity = '0';
-                megaMenu.style.visibility = 'hidden';
-                megaMenu.style.transform = 'translateY(20px)';
-                megaMenu.style.pointerEvents = 'none';
-            }
-        });
-    }
+// Pastikan skrip slider berjalan setelah seluruh halaman dimuat
+window.onload = function() {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    const prevButton = document.querySelector('.hero-slider .prev');
+    const nextButton = document.querySelector('.hero-slider .next');
+    const dots = document.querySelectorAll('.hero-slider .dot');
 
-    // --- LOGIKA MEGA MENU & DROPDOWN ---
-    if (hasDropdownLi && megaMenu) {
-        // Penanganan Event pada Desktop (hover)
-        hasDropdownLi.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 768) {
-                megaMenu.style.opacity = '1';
-                megaMenu.style.visibility = 'visible';
-                megaMenu.style.transform = 'translateY(0)';
-                megaMenu.style.pointerEvents = 'auto';
-            }
-        });
-
-        hasDropdownLi.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 768) {
-                megaMenu.style.opacity = '0';
-                megaMenu.style.visibility = 'hidden';
-                megaMenu.style.transform = 'translateY(20px)';
-                megaMenu.style.pointerEvents = 'none';
-            }
-        });
-    }
-
-    // --- LOGIKA ACTIVE NAVIGATION LINK ---
-    const allNavLinks = document.querySelectorAll('.main-nav a');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-
-    allNavLinks.forEach(link => {
-        const linkPath = link.href.split('/').pop();
-        
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-            
-            const parentLi = link.closest('.has-dropdown');
-            if (parentLi) {
-                const parentLink = parentLi.querySelector(':scope > a');
-                if (parentLink) {
-                    parentLink.classList.add('active');
-                }
-            }
-        } else {
-            link.classList.remove('active');
-        }
-    });
-
-    // --- SLIDER INITIALIZATION ---
-    sliderContainer = document.querySelector(".slider-container");
-    slides = document.querySelectorAll(".slide");
-    dots = document.querySelectorAll(".dot");
-    
-    if (slides && slides.length > 0) {
+    if (slides.length > 0) {
         showSlides(slideIndex);
     }
 
-    // --- MODAL ZOOM GAMBAR ---
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-    const closeBtn = document.querySelector(".close");
-    
-    const zoomableImages = document.querySelectorAll(".zoomable-img");
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => plusSlides(-1));
+        nextButton.addEventListener('click', () => plusSlides(1));
+    }
 
-    if (modal && modalImg && closeBtn) {
-        zoomableImages.forEach(img => {
-            img.addEventListener("click", () => {
-                modal.style.display = "flex";
-                modalImg.src = img.src;
-            });
+    if (dots.length > 0) {
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => currentSlide(index + 1));
         });
-        
-        closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-        
-        modal.addEventListener("click", function (e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
+    }
+};
+
+// Gunakan DOMContentLoaded untuk kode yang hanya membutuhkan DOM
+document.addEventListener('DOMContentLoaded', function() {
+    // --- NAVIGASI DAN DROPDOWN ---
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNavContainer = document.querySelector('.header-menu-container');
+
+    const dropdownParents = document.querySelectorAll('.has-dropdown');
+    dropdownParents.forEach(function(parent) {
+        parent.addEventListener('mouseenter', function() {
+            const dropdown = parent.querySelector('.dropdown-menu');
+            if (dropdown) {
+                dropdown.style.display = 'block';
             }
         });
-        
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && modal.style.display === "flex") {
-                modal.style.display = "none";
+        parent.addEventListener('mouseleave', function() {
+            const dropdown = parent.querySelector('.dropdown-menu');
+            if (dropdown) {
+                dropdown.style.display = 'none';
+            }
+        });
+    });
+
+    const subDropdownParents = document.querySelectorAll('.has-sub-dropdown');
+    subDropdownParents.forEach(function(parent) {
+        parent.addEventListener('mouseenter', function() {
+            const subDropdown = parent.querySelector('.sub-dropdown-menu');
+            if (subDropdown) {
+                subDropdown.style.display = 'block';
+            }
+        });
+        parent.addEventListener('mouseleave', function() {
+            const subDropdown = parent.querySelector('.sub-dropdown-menu');
+            if (subDropdown) {
+                subDropdown.style.display = 'none';
+            }
+        });
+    });
+
+    // --- TOGGLE MOBILE MENU ---
+    if (menuToggle && mainNavContainer) {
+        menuToggle.addEventListener('click', function() {
+            mainNavContainer.classList.toggle('active');
+            const toggleIcon = menuToggle.querySelector('i');
+            if (mainNavContainer.classList.contains('active')) {
+                toggleIcon.classList.remove('fa-bars');
+                toggleIcon.classList.add('fa-times');
+            } else {
+                toggleIcon.classList.remove('fa-times');
+                toggleIcon.classList.add('fa-bars');
             }
         });
     }
 
-    // --- MENUTUP MEGA MENU DAN MOBILE NAV KETIKA RESIZE LAYAR ---
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            mainNav.classList.remove('active');
-            if (megaMenu) {
-                megaMenu.style.opacity = '0';
-                megaMenu.style.visibility = 'hidden';
-                megaMenu.style.transform = 'translateY(20px)';
-                megaMenu.style.pointerEvents = 'none';
-            }
+    // --- MODAL IMAGE (Event Delegation) ---
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeSpan = document.querySelector(".modal .close");
+
+    document.addEventListener("click", function (e) {
+        // Jika klik gambar produk
+        if (e.target && e.target.matches(".product-card img")) {
+            modal.style.display = "flex";
+            modalImg.src = e.target.src;
+        }
+        // Jika klik tombol close
+        if (e.target === closeSpan) {
+            modal.style.display = "none";
         }
     });
 
-    // --- MENUTUP MOBILE NAV SAAT KLIK DI LUAR AREA NAV ---
-    document.addEventListener('click', function(e) {
-        const isClickInsideNav = mainNav.contains(e.target) || (mobileMenu && mobileMenu.contains(e.target));
-        if (window.innerWidth <= 768 && mainNav.classList.contains('active') && !isClickInsideNav) {
-            mainNav.classList.remove('active');
+    // Tutup modal jika klik di luar gambar
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Tutup modal dengan tombol ESC
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            modal.style.display = "none";
         }
     });
 });

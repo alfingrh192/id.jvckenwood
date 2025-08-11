@@ -1,0 +1,167 @@
+[
+  {
+    "id": "kenwood-nx1200-1300",
+    "name": "NX-1200/1300",
+    "brand": "Kenwood",
+    "model": "NX-1200/1300 Series",
+    "category": "Portable Radio (HT)",
+    "protocol": "Analog, DMR, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Seri Kenwood NX-1000 menawarkan Handy Talky (HT) dengan performa robust yang mendukung mode Analog dan Digital (DMR/NXDN). Dirancang untuk berbagai lingkungan operasional, unit ini tersedia dalam varian Full Keypad dan Non Keypad. Fitur-fitur utamanya meliputi rating IP67 untuk ketahanan debu dan air, opsi Intrinsically Safe (IS) Ready, fungsi VOX untuk komunikasi bebas genggam, dan tombol darurat untuk keamanan pengguna.",
+    "short_description": "Analog dan Digital HT dengan performa robust.",
+    "main_image_url": "images/nx1200nx1300.png",
+    "thumbnail_image_url": "images/nx1200nx1300.png",
+    "brochure_url": "downloads/brosur_nx1200.pdf",
+    "page_url": "analog-ht.html#kenwood-nx1200-1300",
+    "keywords": [
+      "Kenwood", "NX-1200", "NX-1300", "HT", "Handy Talky", "Walkie Talkie", "Analog", "DMR", "NXDN", "portable radio", "IP67", "IS Option", "VOX", "Emergency Button", "digital HT", "analog HT", "NX1000"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz",
+      "Protocol: Analog/DMR/NXDN",
+      "Keypad: Full Keypad & Non Keypad",
+      "Key features: IP67, IS Option Ready, VOX, Emergency Button"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx1300k7",
+    "name": "NX-1300K7",
+    "brand": "Kenwood",
+    "model": "NX-1300K7",
+    "category": "Portable Radio (HT)",
+    "protocol": "Analog, NXDN, DMR",
+    "frequency_band": "UHF 350-400 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Kenwood NX-1300K7 adalah Handy Talky (HT) digital UHF yang ringkas dengan fitur Intrinsically Safe (IS) yang sudah siap. Radio ini dirancang untuk lingkungan yang membutuhkan peralatan aman, serta mendukung berbagai protokol komunikasi termasuk Analog, NXDN, dan DMR. Unit ini hadir dalam desain non-keypad yang sederhana namun fungsional.",
+    "short_description": "Compact UHF Digital HT dengan fitur Intrinsically Safe.",
+    "main_image_url": "images/nx1300k7.png",
+    "thumbnail_image_url": "images/nx1300k7.png",
+    "brochure_url": "downloads/brosur_nx1300k7.pdf",
+    "page_url": "analog-ht.html#kenwood-nx1300k7",
+    "keywords": [
+      "Kenwood", "NX-1300K7", "HT", "Handy Talky", "Walkie Talkie", "UHF", "Analog", "NXDN", "DMR", "portable radio", "IS Ready", "Intrinsically Safe", "digital HT", "analog HT", "NX1000"
+    ],
+    "features": [
+      "Frequency: UHF 350-400 MHz",
+      "Protocol: Analog/NXDN/DMR",
+      "Keypad: Non Keypad",
+      "Key features: IS (Intrinsically Safe) Ready"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx3200-3300",
+    "name": "NX-3200/3300",
+    "brand": "Kenwood",
+    "model": "NX-3200/3300 Series",
+    "category": "Portable Radio (HT)",
+    "protocol": "Analog, DMR, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Seri Kenwood NX-3000 menawarkan radio HT multiband berkualitas tinggi yang mendukung protokol Analog, DMR, dan NXDN. Dirancang untuk komunikasi yang andal, unit ini dilengkapi dengan Full Keypad untuk navigasi yang mudah. Fitur unggulan meliputi konektor universal untuk aksesori yang fleksibel dan tombol darurat untuk keamanan tambahan dalam situasi kritis.",
+    "short_description": "High-quality multiband HT radio, supporting DMR and NXDN.",
+    "main_image_url": "images/nx3300.png",
+    "thumbnail_image_url": "images/nx3300.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "analog-ht.html#kenwood-nx3200-3300",
+    "keywords": [
+      "Kenwood", "NX-3200", "NX-3300", "HT", "Handy Talky", "Walkie Talkie", "Analog", "DMR", "NXDN", "portable radio", "multiband", "Full Keypad", "Universal Connector", "Emergency Button", "digital HT", "analog HT", "NX3000"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz",
+      "Protocol: Analog, DMR, NXDN",
+      "Keypad: Full Keypad",
+      "Key features: Universal Connector, Emergency Button"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx3220-3320",
+    "name": "NX-3220/3320",
+    "brand": "Kenwood",
+    "model": "NX-3220/3320 Series",
+    "category": "Portable Radio (HT)",
+    "protocol": "Analog, DMR, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Seri Kenwood NX-3220/3320 adalah radio HT multiband berkualitas tinggi yang mendukung protokol Analog, DMR, dan NXDN. Radio ini memiliki kualitas audio yang superior dan dirancang untuk komunikasi yang andal. Fitur utamanya adalah penggunaan konektor 2-pin standar, yang memungkinkan fleksibilitas dalam pemilihan aksesori.",
+    "short_description": "High-quality multiband HT radio, supporting DMR and NXDN.",
+    "main_image_url": "images/nx3300.png",
+    "thumbnail_image_url": "images/nx3300.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "analog-ht.html#kenwood-nx3220-3320",
+    "keywords": [
+      "Kenwood", "NX-3220", "NX-3320", "HT", "Handy Talky", "Walkie Talkie", "Analog", "DMR", "NXDN", "portable radio", "multiband", "2 pin connector", "digital HT", "analog HT", "NX3000"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz",
+      "Protocol: Analog, DMR, NXDN",
+      "Keypad: Full Keypad",
+      "Key features: 2 pin connector"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx5200-5300-5400",
+    "name": "NX-5200/5300/5400",
+    "brand": "Kenwood",
+    "model": "NX-5200/5300/5400 Series",
+    "category": "Portable Radio (HT)",
+    "protocol": "Analog, DMR, NXDN, P25",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz / 700-800 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Seri Kenwood NX-5000 adalah radio HT multiband premium yang mendukung protokol Analog, DMR, NXDN, dan P25. Dirancang untuk profesional yang membutuhkan komunikasi paling canggih dan andal. Dilengkapi dengan Full Keypad, GPS terintegrasi untuk pelacakan lokasi, dan konektivitas Bluetooth untuk aksesori nirkabel. Ini adalah solusi komunikasi serbaguna untuk misi kritis.",
+    "short_description": "High-quality multiband HT radio, supporting DMR, NXDN, and P25.",
+    "main_image_url": "images/nx5000s.png",
+    "thumbnail_image_url": "images/nx5000s.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "analog-ht.html#kenwood-nx5200-5300-5400",
+    "keywords": [
+      "Kenwood", "NX-5200", "NX-5300", "NX-5400", "HT", "Handy Talky", "Walkie Talkie", "Analog", "DMR", "NXDN", "P25", "portable radio", "multiband", "Full Keypad", "GPS", "Bluetooth", "digital HT", "analog HT", "NX5000"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz / 700-800 MHz",
+      "Protocol: Analog, DMR, NXDN, P25",
+      "Keypad: Full Keypad",
+      "Key features: GPS, Bluetooth"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-thk20a-discontinued",
+    "name": "TH-K20A",
+    "brand": "Kenwood",
+    "model": "TH-K20A",
+    "category": "Portable Radio (HT)",
+    "protocol": "Analog",
+    "frequency_band": "N/A",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Produk TH-K20A ini telah dihentikan produksinya dan digantikan oleh seri Kenwood NX-1200/1300. Informasi detail lebih lanjut mungkin terbatas. Untuk kebutuhan komunikasi analog modern, disarankan untuk melihat model pengganti.",
+    "short_description": "Produk ini sudah dihentikan produksinya.",
+    "main_image_url": "images/thk20a.png",
+    "thumbnail_image_url": "images/thk20a.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "analog-ht.html#kenwood-thk20a-discontinued",
+    "keywords": [
+      "Kenwood", "TH-K20A", "THK20A", "HT", "Handy Talky", "Walkie Talkie", "Analog", "discontinued", "pengganti", "replaced by NX-1200/1300", "portable radio"
+    ],
+    "features": [
+      "Replaced by NX-1200/1300"
+    ],
+    "discontinued": true,
+    "replaced_by": "Kenwood NX-1200/1300 Series"
+  }
+]

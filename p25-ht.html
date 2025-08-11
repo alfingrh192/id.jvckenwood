@@ -5,101 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Radio Communication Products Catalog - JVC Kenwood Indonesia</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="main-header">
-		<div class="header-inner">
-			<div class="logo">
-				<a href="index.html"><img src="images/kenwood.png" alt="Company Logo"></a>
-			</div>
-			<nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="index.html" id="navHome">Home</a></li>
-                    <li class="has-dropdown"> <a href="#" id="navHT">Analog Radio</a>
-                        <div class="dropdown-menu">
-                            <a href="analog-ht.html">Portable Radio</a>
-                            <a href="analog-mobile.html">Mobile Radio</a>
-                            <a href="analog-base.html">Base Station</a>
-                        </div>
-                    </li>
-                    <li class="has-dropdown"> <a href="#" id="navMobile">DMR/NXDN Radio</a>
-                        <div class="dropdown-menu">
-                            <a href="dmr-nxdn-ht.html">Portable Radio</a>
-                            <a href="dmr-nxdn-mobile.html">Mobile Radio</a>
-                            <a href="dmr-nxdn-base.html">Base Station</a>
-                        </div>
-                    </li>
-                    <li class="has-dropdown"> <a href="#" id="navBase">P25 Radio</a>
-                        <div class="dropdown-menu">
-                            <a href="p25-ht.html">Portable Radio</a>
-                            <a href="p25-mobile.html">Mobile Radio</a>
-                            <a href="p25-base.html">Base Station</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </div> 
-	</header>
+        <div class="header-inner container">
+            <div class="logo">
+                <a href="index.html"><img src="images/kenwood.png" alt="Company Logo"></a>
+            </div>
+            
+            <!-- Tambahkan div ini untuk penataan mobile yang lebih baik -->
+            <div class="header-menu-container">
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Dropdown products dengan nested structure -->
+                        <li class="has-dropdown" id="products-dropdown-parent">
+                            <a href="#" class="dropdown-link">
+                                Products
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        Analog Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="analog-ht.html">Portable Radio</a></li>
+                                        <li><a href="analog-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="analog-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        DMR/NXDN Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
+                                        <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="dmr-nxdn-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        P25 Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="p25-ht.html">Portable Radio</a></li>
+                                        <li><a href="p25-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="p25-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search-form" id="search-form">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
 
-    <div class="container">
-        <h1>P25 Radio</h1>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="search-results">
+            </div>
+    
+    <div class="container main-content" id="main-content-wrapper">
+        <h1 class="section-title">P25 Radio</h1>
 
         <div class="category-section">
             <h2 class="category-title">NX-5000 Series</h2>
-				<div class="product-card">
-                <img src="images/nx5000s.png" alt="Kenwood NX-5000">
+            <div id="kenwood-nx1200-1300" class="product-card">
+                <div class="image-wrapper">
+                    <img src="images/nx5000s.png" alt="Kenwood NX-5000" class="zoomable-img">
+                </div>
                 <div class="product-info">
                     <h3>NX-5200/5300/5400</h3>
-                    <p>High-quality multiband HT radio, supporting DMR, NXDN, and P25.</p>
+                    <p>High-quality multiband HT radio, supporting DMR, NXDN, and P25</p>
                     <ul>
                         <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: VHF 136-174 MHz / UHF 400-470 MHz / 700-800 MHz</li>
                         <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog, DMR, NXDN, P25</li>
                         <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: Full Keypad</li>
                         <li><span class="icon"><i class="fas fa-star"></i></span> Key features: GPS, Bluetooth</li>
                     </ul>
-                    <a href="downloads/brosur_nx32003300.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
+                    <a href="downloads/brosur_nx1200.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
                 </div>
             </div>
         </div>
-	
-		<div class="category-section">
+
+        <div class="category-section">
             <h2 class="category-title">Discontinued</h2>
-				<div class="product-card">
-                <img src="images/thk20a.png" alt="TH K20A">
+            <div id="kenwood-thk20a-discontinued" class="product-card">
+                <div class="image-wrapper">
+                    <img src="images/thk20a.png" alt="Kenwood TH-K20A HT (Discontinued)" class="zoomable-img">
+                </div>
                 <div class="product-info">
                     <h3>TH-K20A
-                    <span class="product-badge discontinue">Discontinued</span></h3>
+                        <span class="product-badge discontinue">Discontinued</span>
+                    </h3>
                     <p>Replaced by NX-1200/1300</p>
                     <ul>
-                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency:</li>
-                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol:</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad:</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features:</li>
+                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: N/A</li>
+                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog</li>
+                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: N/A</li>
+                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: N/A</li>
                     </ul>
-                    <a href="downloads/brosur_nx32003300.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Discontinue Letter</a>
+                    <a href="downloads/brosur_discontinue_letter_thk20a.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Discontinue Letter</a>
                 </div>
             </div>
-
-		</div>
-	</div>
- <footer class="main-footer">
+        </div>
+    </div>
+    
+    <footer class="main-footer">
         <div class="footer-content">
-            <div class="footer-section footer-contact">
+            <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Wisma Keiai, Jl. Jenderal Sudirman No.KAV.3, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220</p>
-                <p><i class="fas fa-phone-alt"></i> Phone: 021-572-4178</p>
+                <div class="footer-contact">
+                <p><i class="fa-solid fa-location-dot"></i> Wisma Keiai, Jl. Jenderal Sudirman No.KAV.3, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: 021-572-4178</p>
+                </div>
             </div>
             <div class="footer-section footer-social">
                 <h3>Follow Us</h3>
-                <a href="https://www.linkedin.com/company/jvckenwood-communication-indonesia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/company/jvckenwood-communication-indonesia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -107,117 +144,31 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/6281?text=Hello%2C%20I%27m%20interested%20in%20your%20Kenwood%20radio%20communication%20products."
-         class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <span class="whatsapp-caption">Contact Our Sales</span> <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/6281119727887?text=Hello%20I%20am%20interested%20in%20your%20Kenwood%20radio%20communication%20products." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="whatsapp-caption">Contact Our Sales</span>
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-	<div id="imageModal" class="image-modal">
-		<span class="close-modal">&times;</span>
-		<img class="modal-content" id="zoomedImage" />
-	</div>
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                </div>
+        </div>
+    </div>
 
-<script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const mainNav = document.getElementById('mainNav');
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            // Close any open dropdowns when main nav is toggled
-            document.querySelectorAll('.has-dropdown.expanded').forEach(dropdown => {
-                dropdown.classList.remove('expanded');
-            });
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mainNav a').forEach(item => {
-            item.addEventListener('click', (event) => {
-                if (window.innerWidth <= 768) {
-                    const parentLi = item.closest('li.has-dropdown');
-                    if (parentLi) {
-                        // If it's a dropdown parent link, prevent default to toggle dropdown
-                        event.preventDefault();
-                        parentLi.classList.toggle('expanded');
-                    } else {
-                        // If not a dropdown parent, close the entire mobile menu
-                        mainNav.classList.remove('active');
-                    }
-                }
-            });
-        });
-
-        // === Script for Active Nav Link ===
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname.split('/').pop(); // Get the current file name (e.g., products-ht.html)
-            const navLinks = document.querySelectorAll('.main-nav > ul > li > a'); // Only top-level links
-
-            navLinks.forEach(link => {
-                const linkPath = link.href.split('/').pop();
-                // Check if the current path matches the link path, or if it's the home page
-                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
-                    link.classList.add('active');
-                } else {
-                    // Remove active class from other links (important for dropdowns)
-                    link.classList.remove('active');
-                }
-            });
-
-            // Adjust active state for parent dropdowns if a sub-item is active
-            const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
-            dropdownLinks.forEach(subLink => {
-                const subLinkPath = subLink.href.split('/').pop();
-                if (subLinkPath === currentPath) {
-                    subLink.classList.add('active');
-                    // Find the parent dropdown link and add active class to it
-                    const parentDropdownLi = subLink.closest('.has-dropdown');
-                    if (parentDropdownLi) {
-                        const parentLink = parentDropdownLi.querySelector(':scope > a'); // Select direct child <a>
-                        if (parentLink) {
-                            parentLink.classList.remove('active'); // Remove active from parent if sub-link is active
-                            // Note: If you want the parent to also be 'active' when a sub-item is active, change `remove` to `add` above.
-                            // The current setup ensures only the *specific* active link (sub-link) has the 'active' style.
-                            // If you prefer the parent link to also show active, change 'remove' to 'add' for `parentLink.classList.add('active');`
-                            // For a clean look, often only the exact active page link is highlighted.
-                        }
-                    }
-                } else {
-                    subLink.classList.remove('active');
-                }
-            });
-        });
-		
-		const modal = document.getElementById("imageModal");
-		const modalImg = document.getElementById("zoomedImage");
-		const closeBtn = document.querySelector(".close-modal");
-
-		// Klik gambar: tampilkan modal
-		document.querySelectorAll(".product-card img").forEach(img => {
-			img.addEventListener("click", function () {
-				modal.style.display = "flex";
-				modalImg.src = this.src;
-				modalImg.alt = this.alt;
-			});
-		});
-
-		// Tombol close
-		closeBtn.onclick = function () {
-			modal.style.display = "none";
-		};
-
-		// Klik luar gambar
-		modal.addEventListener("click", function (e) {
-			if (e.target === modal) {
-				modal.style.display = "none";
-			}
-		});
-
-		// Tombol ESC
-		document.addEventListener("keydown", function (e) {
-			if (e.key === "Escape" && modal.style.display === "flex") {
-				modal.style.display = "none";
-			}
-		});
-		
-</script>
+    <script src="js/fuse.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+    
 </body>
+
 </html>
+
+
+

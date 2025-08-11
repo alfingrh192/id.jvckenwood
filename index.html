@@ -6,48 +6,77 @@
     <title>JVC Kenwood Indonesia - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
     <header class="main-header">
-        <div class="header-inner">
+        <div class="header-inner container">
             <div class="logo">
                 <a href="index.html"><img src="images/kenwood.png" alt="Company Logo"></a>
             </div>
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li class="has-dropdown"> <a href="#">Analog Radio</a>
-                        <div class="dropdown-menu">
-                            <a href="analog-ht.html">Portable Radio</a>
-                            <a href="analog-mobile.html">Mobile Radio</a>
-                            <a href="analog-base.html">Base Station</a>
-                        </div>
-                    </li>
-                    <li class="has-dropdown"> <a href="#">DMR/NXDN Radio</a>
-                        <div class="dropdown-menu">
-                            <a href="dmr-nxdn-ht.html">Portable Radio</a>
-                            <a href="dmr-nxdn-mobile.html">Mobile Radio</a>
-                            <a href="dmr-nxdn-base.html">Base Station</a>
-                        </div>
-                    </li>
-                    <li class="has-dropdown"> <a href="#">P25 Radio</a>
-                        <div class="dropdown-menu">
-                            <a href="p25-ht.html">Portable Radio</a>
-                            <a href="p25-mobile.html">Mobile Radio</a>
-                            <a href="p25-base.html">Base Station</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
+            
+            <!-- Tambahkan div ini untuk penataan mobile yang lebih baik -->
+            <div class="header-menu-container">
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Dropdown products dengan nested structure -->
+                        <li class="has-dropdown" id="products-dropdown-parent">
+                            <a href="#" class="dropdown-link">
+                                Products
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        Analog Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="analog-ht.html">Portable Radio</a></li>
+                                        <li><a href="analog-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="analog-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        DMR/NXDN Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
+                                        <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="dmr-nxdn-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        P25 Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="p25-ht.html">Portable Radio</a></li>
+                                        <li><a href="p25-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="p25-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search-form" id="search-form">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <main>
+    <main class="main-content">
         <section class="hero-slider">
             <div class="slider-container">
                 <div class="slide">
@@ -80,7 +109,10 @@
             </div>
         </section>
 
-        <div class="section-white">
+        <div id="search-results" class="container category-products">
+            </div>
+
+        <div class="section-white category-section">
             <div class="container section-history">
                 <h2 class="category-title">Company History</h2>
                 <div class="timeline">
@@ -103,7 +135,7 @@
             </div>
         </div>
 
-        <div class="section-light">
+        <div class="section-light category-section">
             <div class="container section-business-segment">
                 <h2 class="category-title">JKID Business Outline</h2>
                 <div class="segment-grid">
@@ -120,36 +152,36 @@
             </div>
         </div>
 
-        <section class="section-white">
-        <div class="container">
-            <h2 class="section-title main-section-title">Board of Director</h2>
-            <div class="person-grid">
-                <div class="person-card">
-                    <div class="person-image-wrapper">
-                        <img src="images/kamata.jpeg" alt="Hiroaki Kamata" class="person-image">
-                    </div>
-                    <div class="person-info">
-                        <h3 class="person-name">Hiroaki Kamata</h3>
-                        <p class="person-role">President Director</p>
-                    </div>
-                </div>
-                
-                <div class="person-card">
-                    <div class="person-image-wrapper placeholder">
+        <section class="section-white category-section">
+            <div class="container">
+                <h2 class="category-title">Board of Director</h2>
+                <div class="person-grid">
+                    <div class="person-card">
+                        <div class="person-image-wrapper">
+                            <img src="images/kamata.jpeg" alt="Hiroaki Kamata" class="person-image">
                         </div>
-                    <div class="person-info">
-                        <h3 class="person-name">Noriyuki Murase</h3>
-                        <p class="person-role">Director</p>
+                        <div class="person-info">
+                            <h3 class="person-name">Hiroaki Kamata</h3>
+                            <p class="person-role">President Director</p>
+                        </div>
                     </div>
+                    
+                    <div class="person-card">
+                        <div class="person-image-wrapper placeholder">
+                            </div>
+                        <div class="person-info">
+                            <h3 class="person-name">Noriyuki Murase</h3>
+                            <p class="person-role">Director</p>
+                        </div>
+                    </div>
+                    
                 </div>
-                
             </div>
-        </div>
         </section>
 
-        <section class="section-white">
+        <section class="section-white category-section">
             <div class="container">
-                <h2 class="section-title main-section-title">Communication Team</h2>
+                <h2 class="category-title">Communication Team</h2>
                 <div class="person-grid">
                     <div class="person-card">
                         <div class="person-image-wrapper">
@@ -174,15 +206,30 @@
         </section>
     </main>
 
-    <footer class="main-footer">
+     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
-				<div class="footer-contact">
-                <p><i class="fa-solid fa-location-dot"></i> Wisma Keiai, Jl. Jenderal Sudirman No.KAV.3, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220</p>
-                <p><i class="fa-solid fa-phone"></i> Phone: 021-572-4178</p>
-				</div>
-			</div>
+                <div class="footer-contact">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span>Wisma Keiai, Jl. Jenderal Sudirman No.KAV.3, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span>021-572-4178</span>
+                    </div>
+                </div>
+            </div>
+            </div>
             <div class="footer-section footer-social">
                 <h3>Follow Us</h3>
                 <a href="https://www.linkedin.com/company/jvckenwood-communication-indonesia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -198,7 +245,30 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                </div>
+        </div>
+    </div>
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+    
+    <script src="js/fuse.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
 
 </body>
+
 </html>
+
+
+
+
+
+
+
+
