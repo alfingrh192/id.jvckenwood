@@ -53,16 +53,13 @@ body {
 
 .section-title {
     text-align: center;
-    
-    /* Ubah warna garis menjadi abu-abu terang */
     border-bottom: 2px solid #ccc;
-    
     padding-bottom: 8px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.8em;
     margin-bottom: 40px;
-	margin-top: 30px; 
+	margin-top: 30px;
     color: var(--primary-color);
 }
 
@@ -108,13 +105,13 @@ ul {
 }
 
 .logo {
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .logo img {
     height: 50px;
 	vertical-align: middle;
-	margin-left: 20px; 
+	margin-left: 20px;
 }
 
 .main-nav {
@@ -235,24 +232,17 @@ ul {
 .header-menu-container {
     display: flex;
     align-items: center;
-	gap: 20px; /* Menambahkan jarak yang konsisten antar item */
+	gap: 20px;
 }
-
 
 /* ======================================================= */
 /* SEARCH RESULT                                           */
 /* ======================================================= */
 #search-results {
-    /* Memberi padding di bagian atas dan bawah dalam container hasil pencarian */
-    padding-top: 40px; /* Jarak dari header/navigasi ke hasil pertama */
-    padding-bottom: 80px; /* Jarak dari hasil terakhir ke footer */
-    /* Opsional: Jika Anda ingin jarak dari sisi kiri/kanan layar juga */
-    /* padding-left: 20px; */
-    /* padding-right: 20px; */
-
-    /* Menambahkan margin untuk memastikan jarak dari elemen di luar search-results */
-    margin-top: 20px; /* Jarak di atas search-results */
-    margin-bottom: 20px; /* Jarak di bawah search-results */
+    padding-top: 40px;
+    padding-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* ======================================================= */
@@ -260,10 +250,10 @@ ul {
 /* ======================================================= */
 .no-results-message {
     text-align: center;
-    padding: 40px 20px; /* Sedikit kurangi padding vertikal jika dirasa terlalu banyak */
+    padding: 40px 20px;
     font-size: 1.2em;
     color: var(--light-text);
-    margin: 50px auto; /* Gunakan 'auto' untuk margin horizontal jika ingin senter blok */
+    margin: 50px auto;
     border: 1px dashed var(--border-color);
     border-radius: 10px;
     background-color: var(--card-bg);
@@ -271,12 +261,11 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 250px; /* Tingkatkan min-height untuk memberikan lebih banyak ruang dan membuatnya terlihat lebih senter di area yang lebih besar */
-    max-width: 600px; /* Tambahkan max-width agar tidak terlalu lebar di layar besar */
-    width: 90%; /* Pastikan responsif */
+    min-height: 250px;
+    max-width: 600px;
+    width: 90%;
 }
 
-/* Biarkan .no-results-message i tetap sama */
 .no-results-message i {
     font-size: 4em;
     color: var(--accent-color);
@@ -284,95 +273,48 @@ ul {
     opacity: 0.7;
 }
 
-
 /* ======================================================= */
 /* DROPDOWN & SUB-DROPDOWN STYLING - DESKTOP               */
 /* ======================================================= */
-
-/* Memutar panah dropdown saat menu aktif (untuk desktop) */
 .main-nav li:hover .dropdown-arrow {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
 }
 
-/* Sembunyikan menu dropdown utama secara default */
 .has-dropdown .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Menempatkannya tepat di bawah item menu induk */
+    top: 100%;
     left: 0;
     z-index: 100;
-    background-color: white; /* Warna latar belakang kotak menu */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-width: 200px; /* Lebar minimum kotak */
-}
-
-/* Tampilkan menu dropdown utama saat item induk di-hover */
-.has-dropdown:hover > .dropdown-menu {
-    display: block;
-}
-
-/* ---- STYLING SUB-DROPDOWN (ANALOG RADIO, ETC.) ---- */
-
-/* Sembunyikan sub-dropdown secara default */
-.has-sub-dropdown .sub-dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 0; /* Menempatkannya sejajar dengan item induk */
-    left: 100%; /* Menempatkannya di sebelah kanan item induk */
-    z-index: 101;
-    background-color: #f9f9f9; /* Warna latar belakang yang berbeda untuk sub-menu */
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     min-width: 200px;
 }
 
-/* Pastikan item induk sub-dropdown memiliki posisi relatif */
+.has-dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.has-sub-dropdown .sub-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 101;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 200px;
+}
+
 .has-sub-dropdown {
     position: relative;
 }
 
-/* Tampilkan sub-dropdown saat item induk di-hover */
 .has-sub-dropdown:hover > .sub-dropdown-menu {
     display: block;
 }
 
-/* ---- STYLING TAMBAHAN UNTUK TAMPILAN ---- */
-
-/* Mengatur gaya untuk tautan di dalam menu */
-.dropdown-menu a, .sub-dropdown-menu a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
-    white-space: nowrap; /* Mencegah teks terpotong */
-}
-
-/* Mengatur gaya hover untuk item menu */
-.dropdown-menu li:hover, .sub-dropdown-menu li:hover {
-    background-color: #e2e2e2;
-}
-
-/* Menambahkan garis pemisah ke semua item di dropdown menu */
-.dropdown-menu li {
-    border-bottom: 1px solid #ddd;
-}
-
-/* Mengatur ulang garis untuk item terakhir agar tidak ada garis di bawahnya */
-.dropdown-menu li:last-child {
-    border-bottom: 1px solid #ddd;
-}
-
-/* Styling default untuk panah, mengarah ke kanan */
-.sub-dropdown-link .dropdown-arrow {
-    transition: transform 0.3s ease-in-out; /* Animasi halus saat berputar */
-    transform: rotate(0deg); /* Posisi awal panah */
-}
-
-/* Rotasi panah ke bawah (90 derajat) saat di-hover */
-.has-sub-dropdown:hover > .sub-dropdown-link .dropdown-arrow {
-    transform: rotate(90deg);
-}
-
-.sub-dropdown-link {
+.sub-dropdown-link, .dropdown-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -382,10 +324,27 @@ ul {
     white-space: nowrap;
 }
 
+.dropdown-menu li:hover, .sub-dropdown-menu li:hover {
+    background-color: #e2e2e2;
+}
+
+.dropdown-menu li:not(:last-child),
+.sub-dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.sub-dropdown-link .dropdown-arrow {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+
+.has-sub-dropdown:hover > .sub-dropdown-link .dropdown-arrow {
+    transform: rotate(270deg);
+}
+
 /* ======================================================= */
 /* SEARCH FORM STYLING                                     */
 /* ======================================================= */
-
 .search-form {
     display: flex;
     align-items: center;
@@ -423,112 +382,7 @@ ul {
 }
 
 #search-button:hover {
-    color: #007bff; /* Warna ikon berubah saat di-hover */
-}
-
-
-/* ======================================================= */
-/* MEDIA QUERIES                                           */
-/* ======================================================= */
-
-/* MOBILE */
-@media (max-width: 768px) {
-    body {
-        padding-top: 60px;
-    }
-    
-    .main-header {
-        height: 60px;
-    }
-    
-    .header-inner {
-        height: 60px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .main-nav {
-        position: fixed;
-        top: 60px;
-        right: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: 100%;
-        background-color: var(--header-bg);
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px 0;
-    }
-
-    .main-nav.active {
-        right: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-    }
-
-    .main-nav ul li a {
-        padding: 15px 20px;
-        border-bottom: 1px solid var(--border-color);
-    }
-    
-    .main-nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    /* DROPDOWN & SUB-DROPDOWN - MOBILE */
-    /* Aturan ini menimpa properti desktop untuk mode mobile */
-    .has-dropdown .dropdown-menu,
-    .has-sub-dropdown .sub-dropdown-menu {
-        position: static; /* Mengatur posisi statis agar dropdown berada di bawah elemen induk */
-        box-shadow: none;
-        padding: 0;
-        background-color: var(--light-bg);
-        display: none; /* Menyembunyikan dropdown secara default */
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        min-width: unset; /* Mengatur ulang lebar minimum */
-    }
-
-    /* Aturan ini menampilkan dropdown saat elemen induk memiliki kelas 'expanded' */
-    .has-dropdown.expanded .dropdown-menu,
-    .has-sub-dropdown.expanded .sub-dropdown-menu {
-        display: block; /* Menampilkan dropdown */
-    }
-    
-    /* Styling untuk tautan di dalam menu dropdown mobile */
-    .dropdown-menu li a,
-    .sub-dropdown-menu li a {
-        padding: 10px 30px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .sub-dropdown-menu li a {
-        padding-left: 45px; /* Memberikan indentasi untuk sub-dropdown */
-    }
-
-    /* Memutar panah dropdown saat menu mobile diperluas */
-    .has-dropdown.expanded .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-    
-    .has-sub-dropdown.expanded .sub-dropdown-arrow {
-        transform: rotate(90deg);
-    }
-    
-    .search-box {
-        width: 100%;
-        padding: 10px 20px;
-        box-sizing: border-box;
-    }
+    color: #007bff;
 }
 
 /* ======================================================= */
@@ -841,10 +695,9 @@ ul {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px; /* Jarak antar kartu */
+    margin-bottom: 30px;
 }
 
-/* Menghilangkan margin pada kartu terakhir */
 .timeline-item:last-child {
     margin-bottom: 0;
 }
@@ -885,7 +738,6 @@ ul {
     color: #555;
 }
 
-/* Hilangkan garis vertikal yang sudah tidak diperlukan */
 .timeline::after {
     display: none;
 }
@@ -1094,17 +946,16 @@ ul {
 }
 
 /* ======================================================= */
-/* FOOTER STYLES (Revisi untuk ukuran lebih ringkas dan teks tidak terlalu kecil) */
+/* FOOTER STYLES                                           */
 /* ======================================================= */
 .main-footer {
-    background-color: #2c3e50; /* Warna latar belakang yang lebih gelap dan netral */
-    color: #ecf0f1; /* Warna teks yang lebih terang */
-    padding: 20px 15px; /* Mengurangi padding vertikal dan horizontal secara signifikan */
-    font-size: 1em; /* Ukuran font keseluruhan */
-    margin-top: auto; /* Memastikan footer tetap di bagian bawah */
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan di atas */
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 15px;
+    font-size: 1em;
+    margin-top: auto;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
      --accent-color: #0077b5;
-    
 }
 
 .footer-content {
@@ -1133,22 +984,21 @@ ul {
     margin-bottom: 20px;
     font-size: 1.2em;
     color: #3498db;
-    position: relative; /* Penting untuk penempatan garis */
-    padding-bottom: 15px; /* Jarak antara teks dan garis */
-    border-bottom: none; /* Hapus border-bottom yang lama */
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: none;
 }
 
-/* Garis bawah dengan lebar tetap */
 .footer-section h3::after {
     content: '';
     display: block;
-    width: 150px; /* Lebar garis yang sama untuk semua judul */
+    width: 150px;
     height: 2px;
     background-color: #3498db;
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); /* Menengahkan garis */
+    transform: translateX(-50%);
 }
 .contact-item {
     display: flex;
@@ -1157,10 +1007,9 @@ ul {
 }
 
 .contact-icon {
-    /* Perbaikan: Memberi lebar tetap agar teks sejajar */
     width: 25px;
     text-align: center;
-    margin-right: 15px; /* Jarak antara ikon dan teks */
+    margin-right: 15px;
     font-size: 1.1em;
     color: var(--accent-color);
     flex-shrink: 0;
@@ -1171,7 +1020,6 @@ ul {
     color: #ccc;
 }
 
-/* --- BAGIAN SOSIAL MEDIA --- */
 .footer-social {
     display: flex;
     flex-direction: column;
@@ -1201,59 +1049,11 @@ ul {
     height: auto;
     min-height: 40px;
 }
-/* Responsif untuk layar kecil (mobile) */
-@media (max-width: 768px) {
-    .main-footer {
-        padding: 15px 10px; /* Kurangi padding lebih lanjut untuk mobile */
-    }
-
-    .footer-content {
-        flex-direction: column; /* Mengubah tata letak menjadi kolom tunggal */
-        align-items: center; /* Memusatkan semua konten */
-        gap: 15px; /* Mengurangi gap antar section */
-    }
-
-    .footer-section {
-        min-width: unset; /* Menghapus batasan lebar minimum */
-        width: 100%; /* Mengambil lebar penuh */
-        max-width: 90%; /* Batasi agar ada padding di sisi */
-        text-align: center; /* Memusatkan teks di setiap section */
-    }
-
-    .footer-section h3 {
-        text-align: center; /* Pastikan judul tetap di tengah */
-        border-bottom: none; /* Hapus garis bawah pada judul di mobile untuk tampilan lebih bersih */
-        padding-bottom: 0;
-    }
-
-    .footer-contact p {
-        justify-content: center; /* Pusatkan baris kontak */
-        text-align: left; /* Tetap kiri untuk teks panjang */
-        padding: 0 5px; /* Kurangi padding agar tidak terlalu menempel tepi */
-        font-size: 0.95em; /* Sedikit tingkatkan ukuran font di mobile agar lebih mudah dibaca */
-    }
-
-    .footer-social {
-        margin-top: 8px; /* Memberi sedikit jarak dari section di atasnya */
-    }
-
-    .footer-social a {
-        font-size: 2em; /* Pertahankan ukuran ikon sosial yang layak di mobile */
-    }
-
-    .footer-bottom {
-        font-size: 0.75em; /* Sedikit lebih kecil untuk copyright di mobile */
-        margin-top: 15px;
-        padding-top: 10px;
-    }
-}
-
-
 /* ======================================================= */
 /* UNIVERSAL MODAL OVERLAY STYLES (Untuk .modal)         */
 /* ======================================================= */
 .modal {
-    display: none; /* Sembunyikan modal secara default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -1261,15 +1061,14 @@ ul {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Overlay gelap */
-    justify-content: center; /* Memusatkan modal-content di tengah layar horizontal */
-    align-items: center; /* Memusatkan modal-content di tengah layar vertikal */
-    padding: 20px; /* Jarak dari tepi viewport ke modal-content */
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-/* Kelas ini harus ditambahkan/dihapus oleh JavaScript */
 .modal.active {
-    display: flex; /* Tampilkan modal saat kelas 'active' ada */
+    display: flex;
 }
 
 @keyframes modalzoom {
@@ -1292,22 +1091,21 @@ ul {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     padding: 20px;
     box-sizing: border-box;
-    display: flex; /* Mengatur modal-body di dalamnya */
-    flex-direction: column; /* Mengatur konten modal-body ke bawah */
-    justify-content: flex-start; /* Konten dimulai dari atas */
-    align-items: flex-start; /* Konten dimulai dari kiri */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     animation: modalzoom 0.3s ease-out;
     max-width: 90%;
     max-height: 90vh;
-    position: relative; /* Penting untuk tombol close-button */
-    overflow-y: auto; /* Aktifkan scroll untuk konten detail */
-    width: 800px; /* Contoh lebar untuk modal detail, sesuaikan jika perlu */
-    height: auto; /* Biarkan tinggi menyesuaikan konten */
+    position: relative;
+    overflow-y: auto;
+    width: 800px;
+    height: auto;
 }
 
-/* Tombol Close untuk #product-modal */
 #product-modal .close-button {
-    position: absolute; /* Relatif terhadap .modal-content */
+    position: absolute;
     top: 10px;
     right: 15px;
     color: var(--dark-text);
@@ -1324,18 +1122,15 @@ ul {
     transform: scale(1.1);
 }
 
-/* Gaya untuk .modal-body di #product-modal */
 #product-modal .modal-body {
     width: 100%;
-    /* height: 100%; Ini bisa membuat masalah jika konten terlalu banyak */
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Konten detail akan tertata ke bawah */
+    flex-direction: column;
     gap: 15px;
 }
 
-/* Gaya untuk modal detail produk LENGKAP (displayProductInModal) */
 .modal-product-detail {
     display: flex;
     flex-direction: column;
@@ -1353,7 +1148,6 @@ ul {
     margin: 0 auto 10px auto;
     display: block;
 }
-/* ... (lanjutkan dengan styling untuk modal detail yang sudah ada) ... */
 .modal-product-detail h2 { margin-top: 0; font-size: 1.8em; color: var(--dark-text); }
 .modal-product-detail p { font-size: 0.95em; line-height: 1.5; color: var(--light-text); }
 .modal-product-detail ul { list-style: disc; margin-left: 20px; padding: 0; color: var(--light-text); }
@@ -1378,326 +1172,237 @@ ul {
 .modal-product-detail .modal-actions .whatsapp-button { background-color: #25d366; color: white; }
 .modal-product-detail .modal-actions .button:hover { filter: brightness(1.1); }
 
-
 /* ======================================================= */
 /* STYLES UNTUK MODAL GAMBAR SAJA (#imageModal)            */
 /* ======================================================= */
-#imageModal .modal-content { /* Ini adalah elemen IMG itu sendiri */
-    width: 500px; /* Ukuran kotak putih yang diinginkan */
+#imageModal .modal-content {
+    width: 500px;
     height: 500px;
-    background-color: white; /* Latar belakang putih untuk IMG */
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    padding: 20px; /* Padding di dalam kotak putih, sekitar gambar */
+    padding: 20px;
     box-sizing: border-box;
-    display: flex; /* Aktifkan flexbox untuk memusatkan gambar */
-    justify-content: center; /* Pusatkan gambar horizontal */
-    align-items: center; /* Pusatkan gambar vertikal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: modalzoom 0.3s ease-out;
     max-width: 90%;
     max-height: 90vh;
-    object-fit: contain; /* PENTING: Memastikan seluruh gambar terlihat, menjaga aspek rasio */
-    /* overflow: hidden; // Tidak perlu jika object-fit: contain */
+    object-fit: contain;
 }
 
-#imageModal #modalImg { /* Ini menargetkan IMG di dalam imageModal */
-    max-width: 100%; /* Gambar akan mengisi 100% dari ruang modal-content yang ada */
+#imageModal #modalImg {
+    max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Memastikan gambar diskalakan dengan benar */
+    object-fit: contain;
     display: block;
-    margin: auto; /* Memastikan gambar benar-benar di tengah jika modal-content adalah flex */
+    margin: auto;
 }
 
-/* Tombol Close untuk #imageModal (SESUAI DENGAN STYLE AWAL ANDA: .close dan position: fixed) */
 #imageModal .close {
-    position: fixed; /* Menggunakan position: fixed agar selalu di viewport */
+    position: fixed;
     top: 10px;
     right: 15px;
-    color: var(--dark-text); /* Warna teks untuk tombol tutup */
+    color: var(--dark-text);
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 1002; /* Pastikan di atas overlay dan modal */
+    z-index: 1002;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 #imageModal .close:hover,
 #imageModal .close:focus {
-    color: #ccc; /* Warna hover sesuai yang Anda berikan */
+    color: #ccc;
     transform: scale(1.1);
-}
-/* ======================================================= */
-/* DROPDOWN & SUB-DROPDOWN STYLING - DESKTOP               */
-/* ======================================================= */
-
-/* Memutar panah dropdown utama saat menu aktif */
-.main-nav li:hover .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-/* Sembunyikan menu dropdown utama secara default */
-.has-dropdown .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-width: 200px;
-}
-
-/* Tampilkan menu dropdown utama saat di-hover */
-.has-dropdown:hover > .dropdown-menu {
-    display: block;
-}
-
-/* ---- STYLING SUB-DROPDOWN ---- */
-
-/* Sembunyikan sub-dropdown secara default */
-.has-sub-dropdown .sub-dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    z-index: 101;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-width: 200px;
-}
-
-/* Pastikan item induk sub-dropdown memiliki posisi relatif */
-.has-sub-dropdown {
-    position: relative;
-}
-
-/* Tampilkan sub-dropdown saat di-hover */
-.has-sub-dropdown:hover > .sub-dropdown-menu {
-    display: block;
-}
-
-/* ---- STYLING TAMPILAN UMUM ---- */
-
-/* Mengatur gaya tautan di dropdown, memindahkan panah ke kanan */
-.sub-dropdown-link, .dropdown-link {
-    display: flex; /* Menggunakan Flexbox */
-    justify-content: space-between; /* Memindahkan elemen ke ujung */
-    align-items: center; /* Menyelaraskan secara vertikal */
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
-    white-space: nowrap;
-}
-
-/* Mengatur gaya hover untuk item menu */
-.dropdown-menu li:hover, .sub-dropdown-menu li:hover {
-    background-color: #e2e2e2;
-}
-
-/* Menambahkan garis pemisah antar item */
-.dropdown-menu li:not(:last-child),
-.sub-dropdown-menu li:not(:last-child) {
-    border-bottom: 1px solid #ddd;
-}
-
-/* Styling default untuk panah sub-dropdown (mengarah ke kanan) */
-.sub-dropdown-link .dropdown-arrow {
-    transition: transform 0.3s ease-in-out;
-    transform: rotate(0deg);
-}
-
-/* Rotasi panah sub-dropdown saat di-hover */
-.has-sub-dropdown:hover > .sub-dropdown-link .dropdown-arrow {
-    transform: rotate(270deg);
 }
 
 /* ======================================================= */
 /* MEDIA QUERIES UNTUK MOBILE                              */
 /* ======================================================= */
 @media (max-width: 768px) {
-    
-    /* DROPDOWN & SUB-DROPDOWN - MOBILE */
-    /* Aturan ini menimpa properti desktop untuk mode mobile */
-    .has-dropdown .dropdown-menu,
-    .has-sub-dropdown .sub-dropdown-menu {
-        position: static; /* Mengatur posisi statis agar dropdown berada di bawah elemen induk */
-        box-shadow: none;
-        padding: 0;
-        background-color: var(--light-bg);
-        display: none; /* Menyembunyikan dropdown secara default */
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
-
-    /* Aturan ini menampilkan dropdown saat elemen induk memiliki kelas 'expanded' */
-    .has-dropdown.expanded .dropdown-menu,
-    .has-sub-dropdown.expanded .sub-dropdown-menu {
-        display: block; /* Menampilkan dropdown */
-    }
-    
-    /* Styling untuk tautan di dalam menu dropdown mobile */
-    .dropdown-menu li a,
-    .sub-dropdown-menu li a {
-        padding: 10px 30px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .sub-dropdown-menu li a {
-        padding-left: 45px; /* Memberikan indentasi untuk sub-dropdown */
-    }
-
-    /* Memutar panah dropdown saat menu mobile diperluas */
-    .has-dropdown.expanded .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-}
-
-
-/* ======================================================= */
-/* RESPONSIVE ADJUSTMENTS (REVISI)                        */
-/* ======================================================= */
-@media (max-width: 960px) {
-    .container {
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        height: 60px;
-    }
-
+    /* Main Layout */
     body {
         padding-top: 60px;
     }
 
-    .logo img {
-        height: 50px;
+    .main-header {
+        height: 60px;
     }
 
     .header-inner {
+      overflow: hidden;
+    }
+
+    .logo img {
+        height: 45px;
+        margin-left: 0;
+    }
+
+    .container {
         padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .main-nav {
         display: none;
-        flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 60px;
-        left: 0;
+        right: -100%;
         width: 100%;
+        max-width: none;
+        height: 100%;
         background-color: var(--header-bg);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        max-height: calc(100vh - 60px);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px 0;
         overflow-y: auto;
     }
 
     .main-nav.active {
+        right: 0;
         display: flex;
     }
 
     .main-nav ul {
         flex-direction: column;
         gap: 0;
-    }
-
-    .main-nav li {
         width: 100%;
-        text-align: center;
+    }
+
+    .main-nav ul li a {
+        padding: 15px 20px;
         border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
-    .main-nav li:last-child {
+    .main-nav ul li:last-child a {
         border-bottom: none;
-    }
-    
-    .search-box-li {
-        padding: 15px 0;
-        margin-left: 0;
-    }
-    
-    .search-box {
-        width: 80%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    .main-nav a {
-        padding: 15px 0;
-        font-size: 1em;
     }
 
     .main-nav a::after {
-        display: none;
+        content: none;
     }
 
-    .menu-toggle {
-        display: block;
-        font-size: 1.8em;
+    .search-box-li {
+        width: 100%;
+        padding: 15px 20px;
+        order: -1;
     }
 
-    .dropdown-menu {
+    .search-box {
+        width: 100%;
+    }
+
+    /* Dropdown on Mobile */
+    .has-dropdown .dropdown-menu,
+    .has-sub-dropdown .sub-dropdown-menu {
         position: static;
-        width: auto;
-        max-width: none;
         box-shadow: none;
-        border: none;
         background-color: transparent;
         padding: 0;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        height: 0;
+        display: none;
+        max-height: 0;
         overflow: hidden;
-        transition: height 0.3s ease-out;
-        transform: none;
+        transition: max-height 0.3s ease-in-out;
     }
 
-    .has-dropdown.expanded .dropdown-menu {
-        height: auto;
-        max-height: 400px;
-        padding: 10px;
-        background-color: var(--nav-link-hover);
-        border-radius: 0;
+    .has-dropdown.expanded .dropdown-menu,
+    .has-sub-dropdown.expanded .sub-dropdown-menu {
+        display: block;
+        max-height: 500px; /* Adjust as needed */
+        background-color: rgba(0,0,0,0.05);
+    }
+
+    .dropdown-menu a, .sub-dropdown-menu a {
+        padding-left: 40px;
+    }
+
+    .sub-dropdown-menu a {
+        padding-left: 60px;
+    }
+
+    .dropdown-arrow {
+        font-size: 0.8em;
     }
 
     .has-dropdown.expanded .dropdown-arrow {
         transform: rotate(180deg);
     }
 
-    .product-dropdown-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .has-sub-dropdown .dropdown-arrow {
+        transform: rotate(0deg);
     }
 
-    .product-dropdown-grid h4 {
-        border-bottom: none;
-        padding-bottom: 0;
+    .has-sub-dropdown.expanded .dropdown-arrow {
+        transform: rotate(90deg);
     }
 
-    .has-dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: none;
-    }
-    
+    /* Hero Slider */
     .hero-slider {
         height: calc(100vh - 60px);
-        margin-top: 0;
     }
 
     .hero-caption {
-        font-size: 1.5rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        font-size: 1.2rem;
     }
 
-    .card-grid {
-        grid-template-columns: 1fr;
+    /* Product Card */
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .product-card .image-wrapper {
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+    }
+    
+    .product-card .image-wrapper img {
+        position: static;
+        transform: none;
+        object-fit: contain;
+    }
+    
+    .product-info {
+        text-align: center;
+        min-width: unset;
+    }
+    
+    .product-info ul {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .btn-download {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
+    /* Timeline */
+    .timeline-item {
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Person Card */
     .person-grid {
         flex-direction: column;
         align-items: center;
@@ -1706,48 +1411,19 @@ ul {
     .person-card {
         width: 100%;
         max-width: 350px;
+        padding: 25px 15px;
     }
 
-    .person-image-wrapper {
-        width: 150px;
-        height: 150px;
-    }
-
-    .person-name {
-        font-size: 1.5em;
-    }
-
-    .person-role {
-        font-size: 1em;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .footer-section {
-        min-width: unset;
-        max-width: 100%;
-    }
-
-    .footer-contact p {
-        justify-content: center;
-    }
-
-    .footer-section h3,
-    .footer-social {
-        text-align: center;
-    }
-
+    /* WhatsApp Button */
     .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 20px;
         right: 20px;
-        border-radius: 50px;
+        border-radius: 50%;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .whatsapp-float i {
@@ -1762,89 +1438,34 @@ ul {
     .whatsapp-float:hover {
         width: 50px;
         height: 50px;
+        background-color: var(--whatsapp-dark-green);
+        border-radius: 50%;
         transform: scale(1.1);
-        border-radius: 50px;
     }
 
-    .segment-grid {
+    /* Footer */
+    .footer-content {
         flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
-
-    .segment-card {
-        border-radius: 10px;
-        width: 100%;
+    
+    .footer-section {
+        min-width: unset;
+        max-width: 90%;
+        text-align: center;
     }
-}
-
-@media (max-width: 500px) {
-    body {
-        padding-top: 60px;
+    
+    .footer-section h3 {
+        text-align: center;
     }
-
-    .main-header {
-        height: 60px;
-    }
-
-    .hero-slider {
-        height: calc(100vh - 60px);
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .section-title.main-section-title {
-        font-size: 1.8em;
-    }
-
-    .category-title {
-        font-size: 1.3em;
-    }
-
-    .hero-caption p {
-        font-size: 1.2em;
-    }
-
-    .modal-image-container {
-        width: 90vw;
-        height: 90vw;
-    }
-
-    .close {
-        top: 5px;
-        right: 10px;
-        color: #555;
-        font-size: 30px;
-    }
-
-    .whatsapp-float {
-        min-width: 50px;
-        min-height: 50px;
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        border-radius: 50%;
-        padding: 0;
-    }
-
-    .whatsapp-float i {
-        font-size: 30px;
-    }
-
-    .whatsapp-float .whatsapp-caption {
-        display: none;
-    }
-
-    .whatsapp-float:hover .whatsapp-caption {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .whatsapp-float:hover {
-        min-width: 50px;
-        min-height: 50px;
-        width: 50px;
-        height: 50px;
-        padding: 0;
-        border-radius: 50%;
-        transform: scale(1.1);
+    .contact-item {
+        justify-content: center;
     }
 }
