@@ -1469,3 +1469,69 @@ ul {
         justify-content: center;
     }
 }
+
+/* ======================================================= */
+/* MEDIA QUERIES KHUSUS UNTUK LAYAR SANGAT KECIL (<500px)  */
+/* ======================================================= */
+@media (max-width: 500px) {
+    .container {
+        padding: 0 10px; /* Mengurangi padding agar konten lebih lapang */
+    }
+
+    .logo img {
+        height: 40px; /* Ukuran logo sedikit lebih kecil */
+    }
+
+    .main-nav ul li a {
+        padding: 12px 15px; /* Mengurangi padding horizontal pada menu utama */
+    }
+
+    .search-box-li {
+        padding: 10px 15px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    /* Menyesuaikan padding dropdown agar tetap rapi */
+    .dropdown-menu a {
+        padding: 10px 30px; 
+    }
+
+    .sub-dropdown-menu a {
+        padding: 10px 45px;
+    }
+
+    /* Menyesuaikan ukuran font dan margin untuk tampilan yang lebih padat */
+    .section-title.main-section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
+    .person-card {
+        padding: 20px 10px;
+    }
+    
+    .person-name {
+        font-size: 1.3em;
+    }
+
+    .person-role {
+        font-size: 1em;
+    }
+
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-float:hover {
+        width: 50px;
+        height: 50px;
+    }
+}
