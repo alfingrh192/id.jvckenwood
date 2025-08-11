@@ -1559,8 +1559,8 @@ ul {
 
     /* WhatsApp Button */
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         bottom: 20px;
         right: 20px;
         border-radius: 50%;
@@ -1570,7 +1570,7 @@ ul {
     }
 
     .whatsapp-float i {
-        font-size: 30px;
+        font-size: 35px;
         margin: 0;
     }
 
@@ -1579,8 +1579,8 @@ ul {
     }
 
     .whatsapp-float:hover {
-        width: 50px;
-        height: 50px;
+        width: 65px;
+        height: 65px;
         background-color: var(--whatsapp-dark-green);
         border-radius: 50%;
         transform: scale(1.1);
@@ -1671,11 +1671,17 @@ ul {
     .whatsapp-float {
         bottom: 15px;
         right: 15px;
+        width: 55px; /* Ukuran diperkecil sedikit untuk layar lebih kecil */
+        height: 55px; /* Ukuran diperkecil sedikit untuk layar lebih kecil */
+    }
+
+    .whatsapp-float i {
+        font-size: 30px; /* Ukuran ikon disesuaikan */
     }
 
     .whatsapp-float:hover {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -1716,16 +1722,16 @@ ul {
     .whatsapp-float {
         bottom: 10px;
         right: 10px;
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
     }
 
     .whatsapp-float i {
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .whatsapp-float:hover {
-        width: 45px;
-        height: 45px;
+        width: 55px;
+        height: 55px;
     }
 }
