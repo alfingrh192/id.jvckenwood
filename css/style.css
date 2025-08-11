@@ -1366,36 +1366,38 @@ ul {
 /* ======================================================= */
 @media (max-width: 500px) {
     .header-inner {
-        padding: 0 10px; /* Padding lebih kecil untuk layar sangat sempit */
+        padding: 0 8px; /* Padding sisi dikurangi menjadi 8px */
     }
     
     .logo img {
         height: 40px;
     }
 
-    /* Mengurangi ukuran ikon hamburger lagi untuk layar yang lebih kecil */
     .menu-toggle {
         font-size: 1.5em; 
     }
-
-    .main-nav ul li a {
-        padding: 12px 15px;
+    
+    /* Padding untuk container `<ul>` diperkecil lagi */
+    .main-nav ul {
+        padding: 0 8px; 
     }
-
+    
     .search-box-li {
-        padding: 10px 15px;
+        padding: 10px 8px 0;
     }
 
     .search-input {
         width: 100%;
     }
 
-    .dropdown-menu a {
-        padding: 10px 30px; 
+    /* Padding horizontal untuk link dropdown dikurangi */
+    .dropdown-menu li a {
+        padding: 10px 15px; 
     }
 
-    .sub-dropdown-menu a {
-        padding: 10px 45px;
+    /* Padding horizontal untuk link sub-dropdown dikurangi */
+    .sub-dropdown-menu li a {
+        padding: 10px 25px; 
     }
 
     .section-title.main-section-title {
