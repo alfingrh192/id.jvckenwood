@@ -74,41 +74,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const mainNavContainer = document.querySelector('.header-menu-container');
 
+    // --- DROPDOWN DESKTOP (hover) ---
     const dropdownParents = document.querySelectorAll('.has-dropdown');
-    dropdownParents.forEach(function(parent) {
-        parent.addEventListener('mouseenter', function() {
-            const dropdown = parent.querySelector('.dropdown-menu');
-            if (dropdown) {
-                dropdown.style.display = 'block';
+    dropdownParents.forEach(function (parent) {
+        parent.addEventListener('mouseenter', function () {
+            if (window.innerWidth > 992) { // hanya aktif di desktop
+                const dropdown = parent.querySelector('.dropdown-menu');
+                if (dropdown) dropdown.style.display = 'block';
             }
         });
-        parent.addEventListener('mouseleave', function() {
-            const dropdown = parent.querySelector('.dropdown-menu');
-            if (dropdown) {
-                dropdown.style.display = 'none';
+        parent.addEventListener('mouseleave', function () {
+            if (window.innerWidth > 992) {
+                const dropdown = parent.querySelector('.dropdown-menu');
+                if (dropdown) dropdown.style.display = 'none';
             }
         });
     });
 
+    // --- SUB-DROPDOWN DESKTOP (hover) ---
     const subDropdownParents = document.querySelectorAll('.has-sub-dropdown');
-    subDropdownParents.forEach(function(parent) {
-        parent.addEventListener('mouseenter', function() {
-            const subDropdown = parent.querySelector('.sub-dropdown-menu');
-            if (subDropdown) {
-                subDropdown.style.display = 'block';
+    subDropdownParents.forEach(function (parent) {
+        parent.addEventListener('mouseenter', function () {
+            if (window.innerWidth > 992) {
+                const subDropdown = parent.querySelector('.sub-dropdown-menu');
+                if (subDropdown) subDropdown.style.display = 'block';
             }
         });
-        parent.addEventListener('mouseleave', function() {
-            const subDropdown = parent.querySelector('.sub-dropdown-menu');
-            if (subDropdown) {
-                subDropdown.style.display = 'none';
+        parent.addEventListener('mouseleave', function () {
+            if (window.innerWidth > 992) {
+                const subDropdown = parent.querySelector('.sub-dropdown-menu');
+                if (subDropdown) subDropdown.style.display = 'none';
+            }
+        });
+    });
+
+    // --- DROPDOWN MOBILE (klik) ---
+    dropdownParents.forEach(function (parent) {
+        const link = parent.querySelector('a');
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 992) { // hanya aktif di mobile
+                e.preventDefault();
+                const dropdown = parent.querySelector('.dropdown-menu');
+                if (dropdown) dropdown.classList.toggle('active');
             }
         });
     });
 
     // --- TOGGLE MOBILE MENU ---
     if (menuToggle && mainNavContainer) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             mainNavContainer.classList.toggle('active');
             const toggleIcon = menuToggle.querySelector('i');
             if (mainNavContainer.classList.contains('active')) {
