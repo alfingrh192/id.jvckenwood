@@ -1346,7 +1346,32 @@ ul {
         transform: rotate(90deg);
     }
     
-    /* ... (Aturan lain di 768px tetap sama) ... */
+    /* Layout Business Outline & Product Card */
+    .segment-grid {
+        display: flex;
+        flex-direction: column; /* Menampilkan kartu secara vertikal */
+        gap: 20px; /* Jarak antar kartu */
+    }
+
+    .segment-card {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Gaya bayangan sesuai desktop */
+        border-radius: 10px; /* Sudut melengkung sesuai desktop */
+        overflow: hidden;
+        transition: none; /* Menghapus transisi hover di mobile */
+    }
+    
+    /* Menghapus efek hover di mobile */
+    .segment-card:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    }
+
+    .segment-card img {
+        width: 100%;
+        height: auto; /* Memastikan tinggi menyesuaikan gambar */
+        object-fit: cover;
+    }
+
     .hero-caption {
         font-size: 1.2rem;
     }
