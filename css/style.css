@@ -1222,31 +1222,37 @@ ul {
 /* MEDIA QUERIES UNTUK MOBILE                              */
 /* ======================================================= */
 @media (max-width: 768px) {
-    /* Main Layout & Header */
+    /* Main Layout */
     body {
         padding-top: 60px;
     }
-    
+
     .main-header {
         height: 60px;
     }
 
     .header-inner {
-        padding: 0 15px; /* Memberi ruang di sisi kiri dan kanan */
+      overflow: hidden;
     }
 
     .logo img {
         height: 45px;
         margin-left: 0;
     }
-    
-    /* Ukuran Hamburger Icon */
-    .menu-toggle {
-        display: block;
-        font-size: 1.8em; /* Mengurangi ukuran ikon hamburger */
+
+    .container {
+        padding: 0 15px;
     }
 
-    /* Mobile Navigation Menu */
+    .section-title {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
     .main-nav {
         display: none;
         position: fixed;
@@ -1318,16 +1324,16 @@ ul {
     .has-dropdown.expanded .dropdown-menu,
     .has-sub-dropdown.expanded .sub-dropdown-menu {
         display: block;
-        max-height: 500px;
+        max-height: 500px; /* Adjust as needed */
         background-color: rgba(0,0,0,0.05);
     }
-    
-    .dropdown-menu li a {
-        padding: 12px 40px;
+
+    .dropdown-menu a, .sub-dropdown-menu a {
+        padding-left: 40px;
     }
 
-    .sub-dropdown-menu li a {
-        padding: 12px 60px;
+    .sub-dropdown-menu a {
+        padding-left: 60px;
     }
 
     .dropdown-arrow {
@@ -1346,18 +1352,121 @@ ul {
         transform: rotate(90deg);
     }
 
-    /* ... (Aturan lain di 768px tetap sama) ... */
+    /* Hero Slider */
+    .hero-slider {
+        height: calc(100vh - 60px);
+    }
+
     .hero-caption {
         font-size: 1.2rem;
     }
+
+    /* Product Card */
     .product-card {
         flex-direction: column;
         text-align: center;
     }
+    
+    .product-card .image-wrapper {
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+    }
+    
+    .product-card .image-wrapper img {
+        position: static;
+        transform: none;
+        object-fit: contain;
+    }
+    
+    .product-info {
+        text-align: center;
+        min-width: unset;
+    }
+    
+    .product-info ul {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .btn-download {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Timeline */
+    .timeline-item {
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Person Card */
+    .person-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .person-card {
+        width: 100%;
+        max-width: 350px;
+        padding: 25px 15px;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 50%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .whatsapp-float i {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .whatsapp-float .whatsapp-caption {
+        display: none;
+    }
+
+    .whatsapp-float:hover {
+        width: 50px;
+        height: 50px;
+        background-color: var(--whatsapp-dark-green);
+        border-radius: 50%;
+        transform: scale(1.1);
+    }
+
+    /* Footer */
     .footer-content {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+    
+    .footer-section {
+        min-width: unset;
+        max-width: 90%;
+        text-align: center;
+    }
+    
+    .footer-section h3 {
+        text-align: center;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-item {
+        justify-content: center;
     }
 }
 
@@ -1365,21 +1474,16 @@ ul {
 /* MEDIA QUERIES KHUSUS UNTUK LAYAR SANGAT KECIL (<500px)  */
 /* ======================================================= */
 @media (max-width: 500px) {
-    .header-inner {
-        padding: 0 10px; /* Padding lebih kecil untuk layar sangat sempit */
-    }
-    
-    .logo img {
-        height: 40px;
+    .container {
+        padding: 0 10px; /* Mengurangi padding agar konten lebih lapang */
     }
 
-    /* Mengurangi ukuran ikon hamburger lagi untuk layar yang lebih kecil */
-    .menu-toggle {
-        font-size: 1.5em; 
+    .logo img {
+        height: 40px; /* Ukuran logo sedikit lebih kecil */
     }
 
     .main-nav ul li a {
-        padding: 12px 15px;
+        padding: 12px 15px; /* Mengurangi padding horizontal pada menu utama */
     }
 
     .search-box-li {
@@ -1390,6 +1494,7 @@ ul {
         width: 100%;
     }
 
+    /* Menyesuaikan padding dropdown agar tetap rapi */
     .dropdown-menu a {
         padding: 10px 30px; 
     }
@@ -1398,6 +1503,7 @@ ul {
         padding: 10px 45px;
     }
 
+    /* Menyesuaikan ukuran font dan margin untuk tampilan yang lebih padat */
     .section-title.main-section-title {
         font-size: 2em;
         margin-bottom: 30px;
