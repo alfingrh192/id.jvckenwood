@@ -1222,174 +1222,6 @@ ul {
 /* MEDIA QUERIES UNTUK MOBILE                              */
 /* ======================================================= */
 @media (max-width: 768px) {
-    /* Main Layout & Header */
-    body {
-        padding-top: 60px;
-    }
-    
-    .main-header {
-        height: 60px;
-    }
-
-    .header-inner {
-        padding: 0 15px;
-    }
-
-    .logo img {
-        height: 45px;
-        margin-left: 0;
-    }
-    
-    /* Ukuran Hamburger Icon */
-    .menu-toggle {
-        display: block;
-        font-size: 1.8em;
-    }
-
-    /* Mobile Navigation Menu */
-    .main-nav {
-        display: none;
-        position: fixed;
-        top: 60px;
-        right: -100%;
-        width: 100%;
-        max-width: none;
-        height: 100%;
-        background-color: var(--header-bg);
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
-        flex-direction: column;
-        justify-content: flex-start;
-        overflow-y: auto;
-    }
-
-    .main-nav.active {
-        right: 0;
-        display: flex;
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-        padding: 0 15px; 
-    }
-
-    .main-nav ul li a {
-        padding: 15px 0;
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    .main-nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    .main-nav a::after {
-        content: none;
-    }
-
-    .search-box-li {
-        width: 100%;
-        padding: 15px 15px 0;
-        order: -1;
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    /* Dropdown on Mobile */
-    .has-dropdown .dropdown-menu,
-    .has-sub-dropdown .sub-dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background-color: transparent;
-        padding: 0;
-        display: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
-
-    .has-dropdown.expanded .dropdown-menu,
-    .has-sub-dropdown.expanded .sub-dropdown-menu {
-        display: block;
-        max-height: 500px;
-        background-color: rgba(0,0,0,0.05);
-    }
-    
-    .dropdown-menu li a {
-        padding: 12px 25px;
-    }
-
-    .sub-dropdown-menu li a {
-        padding: 12px 40px;
-    }
-
-    .dropdown-arrow {
-        font-size: 0.8em;
-    }
-
-    .has-dropdown.expanded .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-
-    .has-sub-dropdown .dropdown-arrow {
-        transform: rotate(0deg);
-    }
-
-    .has-sub-dropdown.expanded .dropdown-arrow {
-        transform: rotate(90deg);
-    }
-    
-    /* Layout Business Outline & Product Card */
-    .segment-grid {
-        display: flex;
-        flex-direction: column; /* Menampilkan kartu secara vertikal */
-        gap: 20px; /* Jarak antar kartu */
-    }
-
-    .segment-card {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Gaya bayangan sesuai desktop */
-        border-radius: 10px; /* Sudut melengkung sesuai desktop */
-        overflow: hidden;
-        transition: none; /* Menghapus transisi hover di mobile */
-    }
-    
-    /* Menghapus efek hover di mobile */
-    .segment-card:hover {
-        transform: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-    }
-
-    .segment-card img {
-        width: 100%;
-        height: auto; /* Memastikan tinggi menyesuaikan gambar */
-        object-fit: cover;
-    }
-
-    .hero-caption {
-        font-size: 1.2rem;
-    }
-    .product-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-}
-
-/* ======================================================= */
-/* MEDIA QUERIES UNTUK MOBILE                              */
-/* ======================================================= */
-@media (max-width: 768px) {
     /* Main Layout */
     body {
         padding-top: 60px;
@@ -1554,8 +1386,8 @@ ul {
     
     .product-info ul {
         text-align: left;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .btn-download {
@@ -1621,7 +1453,6 @@ ul {
     .footer-section {
         min-width: unset;
         max-width: 90%;
-        text-align: center;
     }
     
     .footer-section h3 {
@@ -1634,7 +1465,7 @@ ul {
     }
 
     .contact-item {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
