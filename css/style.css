@@ -1396,6 +1396,14 @@ ul {
         text-align: center;
     }
 
+    .segment-grid {
+        flex-direction: column;
+    }
+
+    .segment-card {
+        flex-basis: auto; /* Mengatur ulang flex-basis agar item tidak memanjang */
+    }
+
     /* Timeline */
     .timeline-item {
         padding: 15px;
