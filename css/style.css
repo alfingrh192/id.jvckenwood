@@ -1554,6 +1554,37 @@ ul {
         margin-bottom: 30px;
     }
 
+/* Mengubah susunan item menjadi vertikal dan memusatkannya */
+    .segment-grid {
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px; 
+    }
+
+    /* Mengatur card agar memiliki lebar yang lebih kecil dan tinggi mengikuti konten */
+    .segment-card {
+        width: 85%; /* Atur lebar card yang Anda inginkan */
+        height: auto; /* PENTING: Tinggi otomatis mengikuti konten */
+        flex-basis: auto; /* Mengatur ulang flex-basis */
+        
+        /* Hapus properti padding-bottom dan height: 0; */
+        /* Hapus position: relative; dari sini */
+    }
+    
+    /* Mengatur gambar agar mengisi penuh lebar card */
+    .segment-card img {
+        width: 100%; /* Gambar mengisi 100% lebar card */
+        height: auto; /* Tinggi gambar menyesuaikan secara proporsional */
+        display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+        
+        /* Hapus properti positioning absolut dari sini */
+        /* Hapus object-fit: contain/cover; dari sini */
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+
     .product-card {
         padding: 15px;
     }
@@ -1614,6 +1645,37 @@ ul {
     .dropdown-menu li a {
         padding: 8px 12px; /* Mengurangi padding link dropdown */
         font-size: 0.9em;
+    }
+
+    /* Mengubah susunan item menjadi vertikal dan memusatkannya */
+    .segment-grid {
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px; 
+    }
+
+    /* Mengatur card agar memiliki lebar yang lebih kecil dan tinggi mengikuti konten */
+    .segment-card {
+        width: 85%; /* Atur lebar card yang Anda inginkan */
+        height: auto; /* PENTING: Tinggi otomatis mengikuti konten */
+        flex-basis: auto; /* Mengatur ulang flex-basis */
+        
+        /* Hapus properti padding-bottom dan height: 0; */
+        /* Hapus position: relative; dari sini */
+    }
+    
+    /* Mengatur gambar agar mengisi penuh lebar card */
+    .segment-card img {
+        width: 100%; /* Gambar mengisi 100% lebar card */
+        height: auto; /* Tinggi gambar menyesuaikan secara proporsional */
+        display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+        
+        /* Hapus properti positioning absolut dari sini */
+        /* Hapus object-fit: contain/cover; dari sini */
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
     }
 
     .sub-dropdown-menu li a {
