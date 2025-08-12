@@ -318,10 +318,25 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
     text-decoration: none;
     color: #333;
     white-space: nowrap;
+}
+
+/* Mengatur padding untuk link dropdown utama */
+.dropdown-menu a {
+    padding: 10px 15px; /* Jarak atas/bawah 10px, kiri/kanan 15px */
+}
+
+/* Mengatur padding untuk link sub-dropdown */
+.sub-dropdown-menu a {
+    padding: 10px 20px; /* Jarak atas/bawah 10px, kiri/kanan 20px (lebih lebar) */
+}
+
+/* Tambahan: Pastikan panah dropdown tidak terpengaruh */
+.dropdown-menu a .dropdown-arrow,
+.sub-dropdown-menu a .dropdown-arrow {
+    margin-left: 10px; /* Memberi jarak antara teks dan panah */
 }
 
 .dropdown-menu li:hover, .sub-dropdown-menu li:hover {
@@ -390,14 +405,14 @@ ul {
 /* ======================================================= */
 .section-light {
     background-color: var(--light-bg);
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .section-white {
     background-color: var(--card-bg);
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .section-title.main-section-title {
@@ -444,7 +459,7 @@ ul {
 }
 
 .category-section {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 /* ======================================================= */
@@ -1396,12 +1411,35 @@ ul {
         text-align: center;
     }
 
+    /* Mengubah susunan item menjadi vertikal dan memusatkannya */
     .segment-grid {
         flex-direction: column;
+        align-items: center; 
+        gap: 15px; 
     }
 
+    /* Mengatur card agar memiliki lebar yang lebih kecil dan tinggi mengikuti konten */
     .segment-card {
-        flex-basis: auto; /* Mengatur ulang flex-basis agar item tidak memanjang */
+        width: 85%; /* Atur lebar card yang Anda inginkan */
+        height: auto; /* PENTING: Tinggi otomatis mengikuti konten */
+        flex-basis: auto; /* Mengatur ulang flex-basis */
+        
+        /* Hapus properti padding-bottom dan height: 0; */
+        /* Hapus position: relative; dari sini */
+    }
+    
+    /* Mengatur gambar agar mengisi penuh lebar card */
+    .segment-card img {
+        width: 100%; /* Gambar mengisi 100% lebar card */
+        height: auto; /* Tinggi gambar menyesuaikan secara proporsional */
+        display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+        
+        /* Hapus properti positioning absolut dari sini */
+        /* Hapus object-fit: contain/cover; dari sini */
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
     }
 
     /* Timeline */
