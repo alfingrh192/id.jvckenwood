@@ -14,57 +14,64 @@
             <div class="logo">
                 <a href="index.html"><img src="images/kenwood.png" alt="Company Logo"></a>
             </div>
-			
-			<div class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i> </div>
-			
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="index.html" id="navHome">Home</a></li>
-                    <li class="has-dropdown" id="products-dropdown-parent">
-                        <a href="#" class="dropdown-link">
-                            Products
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </a>
-                        <div class="dropdown-menu" id="products-dropdown">
-                            <div class="container">
-                                <div class="product-dropdown-grid">
-                                    <div>
-                                        <h4>Analog Radio</h4>
-                                        <ul>
-                                            <li><a href="analog-ht.html">Portable Radio</a></li>
-                                            <li><a href="analog-mobile.html">Mobile Radio</a></li>
-                                            <li><a href="analog-base.html">Base Station</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4>DMR/NXDN Radio</h4>
-                                        <ul>
-                                            <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
-                                            <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
-                                            <li><a href="dmr-nxdn-base.html">Base Station</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4>P25 Radio</h4>
-                                        <ul>
-                                            <li><a href="p25-ht.html">Portable Radio</a></li>
-                                            <li><a href="p25-mobile.html">Mobile Radio</a></li>
-                                            <li><a href="p25-base.html">Base Station</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="search-box-li">
-                        <form class="search-box" id="search-form">
-                            <input type="text" placeholder="Search products..." class="search-input" id="search-input">
-                            <button type="submit" class="search-icon" id="search-button"><i class="fas fa-search"></i></button>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
+            
+            <!-- Tambahkan div ini untuk penataan mobile yang lebih baik -->
+            <div class="header-menu-container">
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Dropdown products dengan nested structure -->
+                        <li class="has-dropdown" id="products-dropdown-parent">
+                            <a href="#" class="dropdown-link">
+                                Products
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        Analog Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="analog-ht.html">Portable Radio</a></li>
+                                        <li><a href="analog-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="analog-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        DMR/NXDN Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
+                                        <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
+                                        <li><a href="dmr-nxdn-base.html">Base Station</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-link">
+                                        P25 Radio
+                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
+                                    </a>
+                                    <ul class="sub-dropdown-menu">
+                                        <li><a href="p25-ht.html">Portable Radio</a></li>
+                                        <li><a href="p25-mobile.html">Mobile Radio</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search-form" id="search-form">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -75,115 +82,41 @@
         <h1 class="section-title">Analog Base Station</h1>
 
         <div class="category-section">
-            <h2 class="category-title">NX-1000 Series</h2>
-            <div id="kenwood-nx1200-1300" class="product-card">
+            <h2 class="category-title">NXR-1000 Series</h2>
+            <div id="kenwood-nxr1700-1800" class="product-card">
                 <div class="image-wrapper">
-                    <img src="images/nx1200nx1300.png" alt="Kenwood NX-1200/1300 HT" class="zoomable-img">
+                    <img src="images/nxr17001800.png" alt="Kenwood NX-1700/1800 HT" class="zoomable-img">
                 </div>
                 <div class="product-info">
-                    <h3>NX-1200/1300</h3>
-                    <p>Analog and Digital HT with robust performance.</p>
+                    <h3>NXR-1700/1800</h3>
+                    <p>MULTI-MODE, SINGLE-MINDED, SPACE-SAVING SOLUTION</p>
                     <ul>
-                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: VHF 136-174 MHz / UHF 400-470 MHz</li>
+                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: VHF 136-174 MHz / UHF1 450-520 MHz / UHF2 400-470 MHz</li>
                         <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog/DMR/NXDN</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: Full Keypad & Non Keypad</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: IP67, IS Option Ready, VOX, Emergency Button</li>
+                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Display: Large 1.71-inch OLED with Icons and Numeric Display</li>
+                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: Multi-Site Conventional IP Network, Hot Standby System Redundancy</li>
                     </ul>
                     <a href="downloads/brosur_nx1200.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
                 </div>
             </div>
-            <div id="kenwood-nx1300k7" class="product-card">
-                <div class="image-wrapper">
-                    <img src="images/nx1300k7.png" alt="Kenwood NX-1300K7 HT" class="zoomable-img">
-                </div>
-                <div class="product-info">
-                    <h3>NX-1300K7</h3>
-                    <p>Compact UHF Digital HT with Intrinsically Safe features.</p>
-                    <ul>
-                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: UHF 350-400 MHz</li>
-                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog/NXDN/DMR</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: Non Keypad</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: IS (Intrinsically Safe) Ready</li>
-                    </ul>
-                    <a href="downloads/brosur_nx1300k7.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
-                </div>
-            </div>
         </div>
 
         <div class="category-section">
-            <h2 class="category-title">NX-3000 Series</h2>
-            <div id="kenwood-nx3200-3300" class="product-card">
+            <h2 class="category-title">NXR-5000 Series</h2>
+            <div id="kenwood-nx5700-5800" class="product-card">
                 <div class="image-wrapper">
-                    <img src="images/nx3300.png" alt="Kenwood NX-3200/3300 HT" class="zoomable-img">
+                    <img src="images/nxr57005800.png" alt="Kenwood NXR-5700/5800 HT" class="zoomable-img">
                 </div>
                 <div class="product-info">
-                    <h3>NX-3200/3300</h3>
-                    <p>High-quality multiband HT radio, supporting DMR and NXDN.</p>
+                    <h3>NXR-5700/5800</h3>
+                    <p>NEXEDGE VHF/UHF DIGITAL and FM BASE-REPEATER</p>
                     <ul>
                         <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: VHF 136-174 MHz / UHF 400-470 MHz</li>
-                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog, DMR, NXDN</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: Full Keypad</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: Universal Connector, Emergency Button</li>
+                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog, NXDN</li>
+                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Display: Two-Digit Numeric Display</li>
+                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: NEXEDGE Gen2 Trunking Network, Telephone Interconnect Option</li>
                     </ul>
                     <a href="downloads/brosur_nx32003300.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
-                </div>
-            </div>
-            <div id="kenwood-nx3220-3320" class="product-card">
-                <div class="image-wrapper">
-                    <img src="images/nx3300.png" alt="Kenwood NX-3220/3320 HT" class="zoomable-img">
-                </div>
-                <div class="product-info">
-                    <h3>NX-3220/3320</h3>
-                    <p>High-quality multiband HT radio, supporting DMR and NXDN.</p>
-                    <ul>
-                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: VHF 136-174 MHz / UHF 400-470 MHz</li>
-                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog, DMR, NXDN</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: Full Keypad</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: 2 pin connector</li>
-                    </ul>
-                    <a href="downloads/brosur_nx32003300.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="category-section">
-            <h2 class="category-title">NX-5000 Series</h2>
-            <div id="kenwood-nx5200-5300-5400" class="product-card">
-                <div class="image-wrapper">
-                    <img src="images/nx5000s.png" alt="Kenwood NX-5000 HT Series" class="zoomable-img">
-                </div>
-                <div class="product-info">
-                    <h3>NX-5200/5300/5400</h3>
-                    <p>High-quality multiband HT radio, supporting DMR, NXDN, and P25.</p>
-                    <ul>
-                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: VHF 136-174 MHz / UHF 400-470 MHz / 700-800 MHz</li>
-                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog, DMR, NXDN, P25</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: Full Keypad</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: GPS, Bluetooth</li>
-                    </ul>
-                    <a href="downloads/brosur_nx32003300.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Brochure</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="category-section">
-            <h2 class="category-title">Discontinued</h2>
-            <div id="kenwood-thk20a-discontinued" class="product-card">
-                <div class="image-wrapper">
-                    <img src="images/thk20a.png" alt="Kenwood TH-K20A HT (Discontinued)" class="zoomable-img">
-                </div>
-                <div class="product-info">
-                    <h3>TH-K20A
-                        <span class="product-badge discontinue">Discontinued</span>
-                    </h3>
-                    <p>Replaced by NX-1200/1300</p>
-                    <ul>
-                        <li><span class="icon"><i class="fas fa-satellite-dish"></i></span> Frequency: N/A</li>
-                        <li><span class="icon"><i class="fas fa-network-wired"></i></span> Protocol: Analog</li>
-                        <li><span class="icon"><i class="fas fa-walkie-talkie"></i></span> Keypad: N/A</li>
-                        <li><span class="icon"><i class="fas fa-star"></i></span> Key features: N/A</li>
-                    </ul>
-                    <a href="downloads/brosur_discontinue_letter_thk20a.pdf" class="btn-download" download> <i class="fas fa-download icon-download"></i> Download Discontinue Letter</a>
                 </div>
             </div>
         </div>
@@ -193,7 +126,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                div class="footer-contact">
+                <div class="footer-contact">
 					<div class="contact-item">
 						<div class="contact-icon">
 							<i class="fa-solid fa-location-dot"></i>
