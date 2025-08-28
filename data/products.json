@@ -163,5 +163,173 @@
     ],
     "discontinued": true,
     "replaced_by": "Kenwood NX-1200/1300 Series"
+  },
+  {
+    "id": "kenwood-nxr1700-1800",
+    "name": "NXR-1700/1800",
+    "brand": "Kenwood",
+    "model": "NXR-1000 Series",
+    "category": "Base Station",
+    "protocol": "Analog, DMR, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF1 450-520 MHz / UHF2 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Repeater multi-mode yang dirancang untuk menghemat ruang, mendukung komunikasi Analog, DMR, dan NXDN. Dilengkapi dengan layar OLED 1.71 inci yang besar, fitur IP Network konvensional multi-situs, dan sistem redundansi Hot Standby untuk keandalan maksimal.",
+    "short_description": "MULTI-MODE, SINGLE-MINDED, SPACE-SAVING SOLUTION",
+    "main_image_url": "images/nxr17001800.png",
+    "thumbnail_image_url": "images/nxr17001800.png",
+    "brochure_url": "downloads/brosur_nx1200.pdf",
+    "page_url": "analog-base.html#kenwood-nxr1700-1800",
+    "keywords": [
+      "Kenwood", "NXR-1700", "NXR-1800", "Base Station", "Repeater", "Analog", "DMR", "NXDN", "OLED Display", "IP Network", "Hot Standby"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF1 450-520 MHz / UHF2 400-470 MHz",
+      "Protocol: Analog/DMR/NXDN",
+      "Display: Large 1.71-inch OLED with Icons and Numeric Display",
+      "Key features: Multi-Site Conventional IP Network, Hot Standby System Redundancy"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx5700-5800",
+    "name": "NXR-5700/5800",
+    "brand": "Kenwood",
+    "model": "NXR-5000 Series",
+    "category": "Base Station",
+    "protocol": "Analog, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Repeater NEXEDGE VHF/UHF Digital dan FM yang andal. Mendukung jaringan Trunking NEXEDGE Gen2 dan opsi interkoneksi telepon untuk komunikasi yang luas dan terintegrasi.",
+    "short_description": "NEXEDGE VHF/UHF DIGITAL and FM BASE-REPEATER",
+    "main_image_url": "images/nxr57005800.png",
+    "thumbnail_image_url": "images/nxr57005800.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "analog-base.html#kenwood-nx5700-5800",
+    "keywords": [
+      "Kenwood", "NXR-5700", "NXR-5800", "Base Station", "Repeater", "NEXEDGE", "Analog", "NXDN", "Trunking Network", "Telephone Interconnect"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz",
+      "Protocol: Analog, NXDN",
+      "Display: Two-Digit Numeric Display",
+      "Key features: NEXEDGE Gen2 Trunking Network, Telephone Interconnect Option"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx1700-1800h",
+    "name": "NX-1700/1800H",
+    "brand": "Kenwood",
+    "model": "NX-1000 Series",
+    "category": "Mobile Radio",
+    "protocol": "Analog, DMR, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Mobile radio dengan performa audio superior dan pengoperasian yang mulus. Mendukung protokol Analog, DMR, dan NXDN, serta dilengkapi dengan tombol darurat dan rating IP54 untuk ketahanan terhadap debu dan percikan air.",
+    "short_description": "SOUND PERFORMANCE, SMOOTH OPERATION",
+    "main_image_url": "images/nx17001800h.png",
+    "thumbnail_image_url": "images/nx17001800h.png",
+    "brochure_url": "downloads/brosur_nx1200.pdf",
+    "page_url": "dmr-nxdn-mobile.html#kenwood-nx1700-1800h",
+    "keywords": [
+      "Kenwood", "NX-1700H", "NX-1800H", "Mobile Radio", "Analog", "DMR", "NXDN", "Emergency Button", "IP54"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz",
+      "Protocol: Analog/DMR/NXDN",
+      "Display: LCD Display + Dpad",
+      "Key features: Emergency button, IP54"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx3720hg-nx3820hg",
+    "name": "NX-3720/3820HG",
+    "brand": "Kenwood",
+    "model": "NX-3000 Series",
+    "category": "Mobile Radio",
+    "protocol": "Analog, DMR, NXDN",
+    "frequency_band": "VHF 136-174 MHz / UHF 400-470 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Dirancang dengan fleksibilitas, mobile radio ini dilengkapi dengan Bluetooth® untuk operasi hands-free dan GPS internal untuk pelacakan lokasi. Mendukung protokol Analog, DMR, dan NXDN.",
+    "short_description": "Designed with flexibility in mind, Bluetooth® for hands-free operation and built-in GPS",
+    "main_image_url": "images/nx37203820hg.png",
+    "thumbnail_image_url": "images/nx37203820hg.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "dmr-nxdn-mobile.html#kenwood-nx3720hg-nx3820hg",
+    "keywords": [
+      "Kenwood", "NX-3720HG", "NX-3820HG", "Mobile Radio", "Analog", "DMR", "NXDN", "GPS", "Bluetooth", "IP54"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF 400-470 MHz",
+      "Protocol: Analog, DMR, NXDN",
+      "Display: LCD Display + Dpad",
+      "Key features: GPS, Bluetooth, IP54"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx3920gk",
+    "name": "NX-3920GK",
+    "brand": "Kenwood",
+    "model": "NX-3000 Series",
+    "category": "Mobile Radio",
+    "protocol": "Analog, DMR, NXDN, P25",
+    "frequency_band": "800 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Mobile radio multiband dengan frekuensi 800 MHz yang mendukung Analog, DMR, NXDN, dan P25. Dilengkapi dengan layar LCD + Dpad dan konektor 2-pin standar.",
+    "short_description": "Designed with flexibility in mind, Bluetooth® for hands-free operation and built-in GPS",
+    "main_image_url": "images/nx3920gk.png",
+    "thumbnail_image_url": "images/nx3920gk.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "dmr-nxdn-mobile.html#kenwood-nx3920gk",
+    "keywords": [
+      "Kenwood", "NX-3920GK", "Mobile Radio", "Analog", "DMR", "NXDN", "P25", "800 MHz", "2 pin connector"
+    ],
+    "features": [
+      "Frequency: 800 MHz",
+      "Protocol: Analog, DMR, NXDN, P25",
+      "Display: LCD Display + Dpad",
+      "Key features: 2 pin connector"
+    ],
+    "discontinued": false,
+    "replaced_by": null
+  },
+  {
+    "id": "kenwood-nx5700-5800-5900",
+    "name": "NX-5700/5800/5900",
+    "brand": "Kenwood",
+    "model": "NX-5000 Series",
+    "category": "Mobile Radio",
+    "protocol": "Analog, DMR, NXDN, P25",
+    "frequency_band": "VHF 136-174 MHz / UHF1 400-470 MHz / UHF2 450-520 MHz / 700-800 MHz",
+    "power_output": "N/A",
+    "channels": "N/A",
+    "description": "Transceiver multi-band VHF/UHF/700-800 MHz premium yang mendukung protokol Analog, DMR, NXDN, dan P25. Fitur unggulan termasuk GPS, Bluetooth, dan ketahanan IP55.",
+    "short_description": "VHF/UHF/700-800 MHz TRANSCEIVERS",
+    "main_image_url": "images/nx570058005900.png",
+    "thumbnail_image_url": "images/nx570058005900.png",
+    "brochure_url": "downloads/brosur_nx32003300.pdf",
+    "page_url": "dmr-nxdn-mobile.html#kenwood-nx5700-5800-5900",
+    "keywords": [
+      "Kenwood", "NX-5700", "NX-5800", "NX-5900", "Mobile Radio", "Analog", "DMR", "NXDN", "P25", "GPS", "Bluetooth", "IP55"
+    ],
+    "features": [
+      "Frequency: VHF 136-174 MHz / UHF1 400-470 MHz / UHF2 450-520 MHz / 700-800 MHz",
+      "Protocol: Analog, DMR, NXDN, P25",
+      "Display: LCD Display + Dpad",
+      "Key features: GPS, Bluetooth, IP55"
+    ],
+    "discontinued": false,
+    "replaced_by": null
   }
 ]
