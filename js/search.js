@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul>
                         ${item.features.map(f => `<li>${sanitizeText(f)}</li>`).join('')}
                     </ul>` : '';
-                const brochureButton = item.brochure_url ? `<a href="${sanitizeText(item.brochure_url)}" target="_blank" class="btn-download"><i class="fas fa-download"></i> Download Brochure</a>` : '';
+                const brochureButton = item.brochure_url ? `<a href="${sanitizeText(item.brochure_url)}" target="_blank" class="btn-download" download><i class="fas fa-download"></i> Download Brochure</a>` : '';
 
                 htmlContent += `
                     <div class="product-card" style="transition-delay: ${index * 50}ms;">
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${product.discontinued && product.replaced_by ? `<p class="replacement-info">Produk ini telah digantikan oleh: <strong>${sanitizeText(product.replaced_by)}</strong></p>` : ''}
                         <div class="modal-actions">
                             <a href="${sanitizeText(product.page_url)}" class="button primary-button">Lihat Halaman Produk</a>
-                            ${product.brochure_url ? `<a href="${sanitizeText(product.brochure_url)}" target="_blank" class="button secondary-button">Download Brosur</a>` : ''}
+                            ${product.brochure_url ? `<a href="${sanitizeText(product.brochure_url)}" target="_blank" class="button secondary-button" download>Download Brosur</a>` : ''}
                             <a href="https://wa.me/6281119727887?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(sanitizeText(product.name))}%20(${sanitizeText(product.model)})." target="_blank" class="button whatsapp-button"><i class="fab fa-whatsapp"></i> Hubungi via WhatsApp</a>
                         </div>
                     </div>
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // --- MENGGUNAKAN EVENT DELEGATION UNTUK MENGURANGI EVENT LISTENER ---
     // Event listener untuk klik pada hasil pencarian (baik gambar atau detail)
     if (searchResultsContainer) {
@@ -373,13 +373,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const productName = productCard.querySelector('h3').textContent.replace('Discontinued', '').trim();
             const product = productsData.find(p => p.name === productName);
-            
+
             if (product) {
                 displayProductImageOnlyInModal(product.main_image_url);
             }
         });
     }
-    
+
     // --- Event listener untuk gambar produk di halaman utama ---
     document.querySelectorAll('.category-products .product-card img').forEach(img => {
         img.addEventListener('click', (e) => {
