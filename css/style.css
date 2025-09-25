@@ -659,9 +659,20 @@ ul {
 
 .product-info li .icon {
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 10px;
     line-height: 1;
     font-size: 1em;
+    flex-shrink: 0;
+}
+
+.product-info ul li {
+  display: flex; /* Ini kunci utama untuk Flexbox */
+  align-items: flex-start;
+  margin-bottom: 5px; /* Tambahkan jarak antar baris */
+}
+
+.product-info li .icon + * {
+  flex-grow: 1; /* Biarkan teks mengisi sisa ruang */
 }
 
 .product-info li .icon i {
