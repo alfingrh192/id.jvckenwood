@@ -1,280 +1,594 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>JVC Kenwood Indonesia - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Tritunggal Mulia Komunikasi - Distributor Resmi Kenwood</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles for the slider transition */
+        .slide-transition {
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
-<body>
-    <header class="main-header">
-        <div class="header-inner container">
-            <div class="logo">
-                <a href="index.html"><img src="images/kenwood.png" alt="Company Logo"></a>
-            </div>
-            
-            <!-- Tambahkan div ini untuk penataan mobile yang lebih baik -->
-            <div class="header-menu-container">
-                <nav class="main-nav" id="mainNav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <!-- Dropdown products dengan nested structure -->
-                        <li class="has-dropdown" id="products-dropdown-parent">
-                            <a href="#" class="dropdown-link">
-                                Products
-                                <i class="fas fa-chevron-down dropdown-arrow"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="has-sub-dropdown">
-                                    <a href="#" class="sub-dropdown-link">
-                                        Analog Radio
-                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
-                                    </a>
-                                    <ul class="sub-dropdown-menu">
-                                        <li><a href="analog-ht.html">Portable Radio</a></li>
-                                        <li><a href="analog-mobile.html">Mobile Radio</a></li>
-                                        <li><a href="analog-base.html">Base Station</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub-dropdown">
-                                    <a href="#" class="sub-dropdown-link">
-                                        DMR/NXDN Radio
-                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
-                                    </a>
-                                    <ul class="sub-dropdown-menu">
-                                        <li><a href="dmr-nxdn-ht.html">Portable Radio</a></li>
-                                        <li><a href="dmr-nxdn-mobile.html">Mobile Radio</a></li>
-                                        <li><a href="dmr-nxdn-base.html">Base Station</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub-dropdown">
-                                    <a href="#" class="sub-dropdown-link">
-                                        P25 Radio
-                                        <i class="fas fa-chevron-left  dropdown-arrow"></i>
-                                    </a>
-                                    <ul class="sub-dropdown-menu">
-                                        <li><a href="p25-ht.html">Portable Radio</a></li>
-                                        <li><a href="p25-mobile.html">Mobile Radio</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="search-form" id="search-form">
-                    <input type="text" id="search-input" placeholder="Search products...">
-                    <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased overflow-x-hidden">
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+    <!-- Top Contact Bar -->
+    <div class="bg-slate-900 text-slate-300 py-2 px-4 md:px-8 text-xs md:text-sm hidden md:flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2 hover:text-white transition cursor-pointer">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                <span>0811-811-99913</span>
+            </div>
+            <div class="flex items-center space-x-2 hover:text-white transition cursor-pointer">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>admin@tritunggalmk.com</span>
+            </div>
         </div>
-    </header>
+        <div class="flex items-center space-x-2">
+            <span class="bg-red-600 text-white px-2 py-0.5 rounded text-xs font-semibold">Distributor Resmi Kenwood</span>
+        </div>
+    </div>
 
-    <main class="main-content">
-        <section class="hero-slider">
-            <div class="slider-container">
-                <div class="slide">
-                    <img src="images/hero-bg.jpg" alt="Gambar Perusahaan JVCKENWOOD">
-                    <div class="hero-caption">
-                        <p>Creating excitement and peace of mind<br>for the people of the world</p>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        <i data-lucide="radio" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-slate-900 leading-none">TMK</h1>
+                        <p class="text-[10px] md:text-xs text-slate-500 font-medium tracking-wide">TRITUNGGAL MULIA KOMUNIKASI</p>
                     </div>
                 </div>
-                <div class="slide">
-                    <img src="images/mining.jpg" alt="Aplikasi JVCKENWOOD di industri pertambangan">
-                    <div class="hero-caption">
-                        <p>Reliable Communication Solutions for the Mining Industry</p>
-                    </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-slate-600 hover:text-blue-700 font-medium transition">Beranda</a>
+                    <a href="#tentang" class="text-slate-600 hover:text-blue-700 font-medium transition">Tentang Kami</a>
+                    <a href="#produk" class="text-slate-600 hover:text-blue-700 font-medium transition">Produk & Layanan</a>
+                    <a href="#kontak" class="text-slate-600 hover:text-blue-700 font-medium transition">Kontak</a>
+                    <a href="#katalog" class="bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-md font-medium transition shadow-lg shadow-blue-700/30 flex items-center gap-2">
+                        Klaim Promo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
-                <div class="slide">
-                    <img src="images/oil.jpg" alt="Gambar kedua dari aplikasi industri">
-                    <div class="hero-caption">
-                        <p>Technological Innovation for Safety and Efficiency</p>
-                    </div>
-                </div>
-            </div>
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-            <div class="dot-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </section>
-
-        <div id="search-results" class="container category-products">
-            </div>
-
-        <div class="section-white category-section">
-            <div class="container section-history">
-                <h2 class="category-title">Company History</h2>
-                <div class="timeline">
-                    <div class="timeline-item timeline-left">
-                        <div class="timeline-point bg-orange">2008</div>
-                        <div class="timeline-content">
-                            <h3>JVC KENWOOD Holdings, Inc.</h3>
-                            <p>JVC KENWOOD Holdings, Inc. was founded</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item timeline-right">
-                        <div class="timeline-point bg-green">2011</div>
-                        <div class="timeline-content">
-                            <h3>JVCKENWOOD Corporation</h3>
-                            <p>Renamed JVCKENWOOD Corporation</p>
-                        </div>
-                    </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
+                        <i data-lucide="x" id="close-icon" class="w-7 h-7 hidden"></i>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="section-light category-section">
-            <div class="container section-business-segment">
-                <h2 class="category-title">JKID Business Outline</h2>
-                <div class="segment-grid">
-                    <div class="segment-card">
-                        <img src="images/mobility.jpg" alt="Mobility & Telematics Services">
-                    </div>
-                    <div class="segment-card">
-                        <img src="images/safety.jpg" alt="Safety & Security Sector">
-                    </div>
-                    <div class="segment-card">
-                        <img src="images/entertainment.jpg" alt="Entertainment Solutions Sector">
-                    </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl transition-all">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#beranda" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-md">Beranda</a>
+                <a href="#tentang" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-md">Tentang Kami</a>
+                <a href="#produk" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-md">Produk & Layanan</a>
+                <a href="#kontak" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700 rounded-md">Kontak</a>
+                <div class="pt-4 pb-2 px-3">
+                    <a href="#katalog" class="mobile-link w-full flex justify-center items-center gap-2 bg-blue-700 text-white px-4 py-3 rounded-md font-medium">
+                        Klaim Promo Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image Slider -->
+    <section id="beranda" class="relative text-white h-[600px] md:h-[700px] overflow-hidden bg-slate-900">
+        
+        <!-- Slider Images Container -->
+        <div id="slider-container" class="absolute inset-0 w-full h-full z-0">
+            <!-- Slide 1 -->
+            <div class="hero-slide absolute inset-0 slide-transition opacity-100 z-10">
+                <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=1920&q=80" alt="Komunikasi Industri" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-slate-900/75 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide absolute inset-0 slide-transition opacity-0 z-0">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80" alt="Tim Profesional" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-slate-900/75 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide absolute inset-0 slide-transition opacity-0 z-0">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80" alt="Teknologi Jaringan" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-slate-900/75 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 h-full flex flex-col justify-center">
+            <div class="md:w-3/4 lg:w-3/5">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-900/60 border border-blue-500/50 text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
+                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i> Spesialis Radio Kenwood
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg">
+                    Solusi Komunikasi Andal <br class="hidden md:block"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">Koneksi Tanpa Batas</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl leading-relaxed drop-shadow">
+                    Menyediakan solusi radio komunikasi profesional yang terpercaya untuk mendukung kelancaran dan keamanan operasional di berbagai lingkungan kerja industri Anda.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#produk" class="bg-blue-700 hover:bg-blue-600 text-white px-8 py-4 rounded-md font-semibold text-lg transition text-center shadow-lg shadow-blue-700/50 border border-blue-600">
+                        Jelajahi Produk
+                    </a>
+                    <a href="#katalog" class="bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white hover:text-slate-900 text-white px-8 py-4 rounded-md font-semibold text-lg transition text-center">
+                        Minta Katalog
+                    </a>
                 </div>
             </div>
         </div>
 
-        <section class="section-white category-section">
-            <div class="container">
-                <h2 class="category-title">Our Board of Director</h2>
-                <div class="person-grid">
-                    <div class="person-card">
-                        <div class="person-image-wrapper">
-                            <img src="images/kamata.jpeg" alt="Hiroaki Kamata" class="person-image">
-                        </div>
-                        <div class="person-info">
-                            <h3 class="person-name">Hiroaki Kamata</h3>
-                            <p class="person-role">President Director</p>
-                        </div>
-                    </div>
-                    
-                    <div class="person-card">
-                        <div class="person-image-wrapper">
-                            <img src="images/murase.jpeg" alt="Noriyuki Murase" class="person-image">
-                        </div>
-                        <div class="person-info">
-                            <h3 class="person-name">Noriyuki Murase</h3>
-                            <p class="person-role">Director</p>
-                        </div>
-                    </div>
-                    
+        <!-- Slider Controls -->
+        <div class="absolute bottom-10 left-0 right-0 z-30 flex justify-center gap-3">
+            <button class="slider-dot w-10 h-1.5 rounded-full bg-blue-500 transition-colors" onclick="goToSlide(0)"></button>
+            <button class="slider-dot w-10 h-1.5 rounded-full bg-white/40 hover:bg-white/80 transition-colors" onclick="goToSlide(1)"></button>
+            <button class="slider-dot w-10 h-1.5 rounded-full bg-white/40 hover:bg-white/80 transition-colors" onclick="goToSlide(2)"></button>
+        </div>
+    </section>
+
+    <!-- Features Banner -->
+    <section class="bg-blue-700 py-8 relative z-40 -mt-10 mx-4 md:mx-auto max-w-6xl rounded-xl shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-8">
+            <div class="flex items-center gap-4 text-white">
+                <div class="bg-blue-600 p-3 rounded-lg shadow-inner">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">Distributor Resmi</h4>
+                    <p class="text-blue-200 text-sm">Produk Original Terjamin</p>
                 </div>
             </div>
-        </section>
-
-        <section class="section-white category-section">
-            <div class="container">
-                <h2 class="category-title">Our Communication Team</h2>
-                <div class="person-grid">
-                    <div class="person-card">
-                        <div class="person-image-wrapper">
-                            <img src="images/olivia.jpeg" alt="Olivia Soumokil" class="person-image">
-                        </div>
-                        <div class="person-info">
-                            <h3 class="person-name">Olivia Soumokil</h3>
-                            <p class="person-role">Communication Manager</p>
-                        </div>
-                    </div>
-                    
-                    <div class="person-card">
-                        <div class="person-image-wrapper placeholder">
-                            <img src="images/alfi.jpg" alt="Alfi Nugraha" class="person-image">
-                        </div>
-                        <div class="person-info">
-                            <h3 class="person-name">Alfi Nugraha</h3>
-                            <p class="person-role">Engineer</p>
-                        </div>
-                    </div>
+            <div class="flex items-center gap-4 text-white">
+                <div class="bg-blue-600 p-3 rounded-lg shadow-inner">
+                    <i data-lucide="wrench" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">Layanan Terpadu</h4>
+                    <p class="text-blue-200 text-sm">Instalasi & Pemeliharaan</p>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="flex items-center gap-4 text-white">
+                <div class="bg-blue-600 p-3 rounded-lg shadow-inner">
+                    <i data-lucide="headphones" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">Teknisi Ahli</h4>
+                    <p class="text-blue-200 text-sm">Respons Teknis Cepat</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <div class="footer-contact">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="contact-text">
-                        <span>Wisma Keiai, Jl. Jenderal Sudirman No.KAV.3, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220</span>
+    <!-- About Section -->
+    <section id="tentang" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute top-4 -left-4 w-full h-full bg-blue-50 rounded-2xl -z-10"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Teknisi Komunikasi Radio" 
+                            class="rounded-2xl shadow-xl object-cover h-[500px] w-full"
+                        />
+                        <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden md:block">
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-2xl">
+                                    10+
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-800">Tahun</p>
+                                    <p class="text-sm text-slate-500">Pengalaman Industri</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-phone"></i>
+                <div class="lg:w-1/2">
+                    <div class="text-blue-700 font-semibold tracking-wider uppercase text-sm mb-2 flex items-center gap-2">
+                        <span class="w-8 h-0.5 bg-blue-700 inline-block"></span> Tentang Kami
                     </div>
-                    <div class="contact-text">
-                        <span>021-572-4178</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                        Mitra Strategis Komunikasi <span class="text-blue-700">Bisnis Anda</span>
+                    </h2>
+                    <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
+                        <p>
+                            PT Tritunggal Mulia Komunikasi (TMK) adalah distributor resmi dan pusat layanan resmi Kenwood di Indonesia yang berfokus pada penyediaan solusi sistem komunikasi radio profesional.
+                        </p>
+                        <p>
+                            Kami tidak hanya menyediakan produk Kenwood original, tetapi juga didukung oleh layanan teknis terpadu, mulai dari perencanaan sistem komunikasi, pengadaan perangkat, instalasi, pengujian, hingga pemeliharaan dan layanan purna jual.
+                        </p>
+                        <p>
+                            Seluruh layanan kami ditangani oleh tenaga teknis berpengalaman yang memahami standar operasional dan kebutuhan industri. Dengan komitmen terhadap keandalan sistem, kami siap mendukung komunikasi yang efektif dan aman bagi pelanggan di seluruh Indonesia.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 grid grid-cols-2 gap-6">
+                        <div class="border-l-4 border-blue-700 pl-4 bg-slate-50 py-2 rounded-r-lg">
+                            <h4 class="font-bold text-2xl text-slate-900">100%</h4>
+                            <p class="text-slate-500 text-sm mt-1">Produk Original</p>
+                        </div>
+                        <div class="border-l-4 border-red-600 pl-4 bg-slate-50 py-2 rounded-r-lg">
+                            <h4 class="font-bold text-2xl text-slate-900">24/7</h4>
+                            <p class="text-slate-500 text-sm mt-1">Dukungan Teknis</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Products & Services Section -->
+    <section id="produk" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-blue-700 font-semibold tracking-wider uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                    <span class="w-8 h-0.5 bg-blue-700 inline-block"></span> Produk & Layanan <span class="w-8 h-0.5 bg-blue-700 inline-block"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    Komunikasi Fleksibel Untuk Semua Situasi
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Solusi komunikasi lengkap mulai dari perangkat keras premium hingga integrasi sistem dan perbaikan teknis.
+                </p>
             </div>
-            <div class="footer-section footer-social">
-                <h3>Follow Us</h3>
-                <a href="https://www.linkedin.com/company/jvckenwood-communication-indonesia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-blue-900/5 group-hover:bg-blue-900/10 transition"></div>
+                        <i data-lucide="radio" class="w-20 h-20 text-slate-700 stroke-[1px]"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Handy Talky (HT)</h3>
+                        <p class="text-slate-600 mb-4 text-sm line-clamp-3">
+                            Radio portabel dua arah yang ringan dan tangguh. Ideal untuk komunikasi lapangan, keamanan, dan konstruksi.
+                        </p>
+                        <a href="#katalog" class="text-blue-700 font-semibold text-sm flex items-center gap-1 hover:text-blue-800">
+                            Lihat Detail <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-blue-900/5 group-hover:bg-blue-900/10 transition"></div>
+                        <!-- RIG Icon placeholder HTML -->
+                        <div class="w-24 h-12 bg-slate-700 rounded-md border-2 border-slate-800 flex items-center p-2 relative shadow-lg">
+                            <div class="w-16 h-8 bg-emerald-900/50 rounded flex items-center px-1"><span class="text-emerald-400 text-[10px] font-mono">144.000</span></div>
+                            <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-4 h-4 bg-slate-800 rounded-full shadow-inner"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Radio RIG / Mobile</h3>
+                        <p class="text-slate-600 mb-4 text-sm line-clamp-3">
+                            Radio base station untuk kendaraan atau pusat komando dengan jangkauan dan daya pancar yang lebih kuat.
+                        </p>
+                        <a href="#katalog" class="text-blue-700 font-semibold text-sm flex items-center gap-1 hover:text-blue-800">
+                            Lihat Detail <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-blue-900/5 group-hover:bg-blue-900/10 transition"></div>
+                        <!-- Repeater placeholder HTML -->
+                        <div class="w-20 h-28 bg-slate-800 rounded-md border border-slate-700 flex flex-col justify-between p-2 shadow-lg z-10">
+                            <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-red-500"></div><div class="w-2 h-2 rounded-full bg-green-500"></div></div>
+                            <div class="w-full h-1/2 bg-slate-900 rounded grid grid-cols-4 gap-1 p-1">
+                                <div class="bg-slate-700 rounded-sm"></div><div class="bg-slate-700 rounded-sm"></div>
+                                <div class="bg-slate-700 rounded-sm"></div><div class="bg-slate-700 rounded-sm"></div>
+                                <div class="bg-slate-700 rounded-sm"></div><div class="bg-slate-700 rounded-sm"></div>
+                                <div class="bg-slate-700 rounded-sm"></div><div class="bg-slate-700 rounded-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Sistem Repeater</h3>
+                        <p class="text-slate-600 mb-4 text-sm line-clamp-3">
+                            Infrastruktur penguat sinyal untuk memperluas cakupan area komunikasi secara masif dan tanpa hambatan.
+                        </p>
+                        <a href="#katalog" class="text-blue-700 font-semibold text-sm flex items-center gap-1 hover:text-blue-800">
+                            Lihat Detail <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center p-6 relative text-blue-700">
+                        <div class="absolute inset-0 bg-blue-900/5 group-hover:bg-blue-900/10 transition"></div>
+                        <i data-lucide="settings" class="w-[72px] h-[72px] stroke-[1.5px]"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Layanan Teknis Jasa</h3>
+                        <p class="text-slate-600 mb-4 text-sm line-clamp-3">
+                            Setting frekuensi, perbaikan perangkat (service), instalasi radio & tower, hingga training operasional.
+                        </p>
+                        <a href="#kontak" class="text-blue-700 font-semibold text-sm flex items-center gap-1 hover:text-blue-800">
+                            Konsultasi Sekarang <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 JVCKenwood Indonesia. All Rights Reserved.</p>
+    </section>
+
+    <!-- Lead Generation Form Section -->
+    <section id="katalog" class="py-24 bg-blue-900 text-white relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-blue-800 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-red-600 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <div class="lg:w-5/12 text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Dapatkan Promo Terbaik & Katalog Lengkap Kami
+                    </h2>
+                    <p class="text-blue-200 text-lg mb-8 leading-relaxed">
+                        Tingkatkan efisiensi komunikasi tim Anda dengan teknologi Kenwood terbaru. Isi formulir untuk mengunduh katalog produk dan dapatkan penawaran harga khusus dari distributor resmi.
+                    </p>
+                    
+                    <ul class="space-y-4 text-left inline-block lg:block mx-auto">
+                        <li class="flex items-center gap-3">
+                            <div class="bg-blue-800 p-1.5 rounded-full text-blue-300"><i data-lucide="chevron-right" class="w-5 h-5"></i></div>
+                            <span>Akses Katalog Semua Tipe HT & RIG</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="bg-blue-800 p-1.5 rounded-full text-blue-300"><i data-lucide="chevron-right" class="w-5 h-5"></i></div>
+                            <span>Konsultasi Perencanaan Sistem Gratis</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="bg-blue-800 p-1.5 rounded-full text-blue-300"><i data-lucide="chevron-right" class="w-5 h-5"></i></div>
+                            <span>Harga Spesial Pembelian Korporat</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:w-7/12 w-full max-w-2xl">
+                    <div class="bg-white text-slate-800 rounded-2xl shadow-2xl p-8 md:p-10 relative">
+                        <h3 class="text-2xl font-bold mb-6 border-b border-slate-100 pb-4">Form Permintaan Katalog</h3>
+                        <form class="space-y-6" onsubmit="event.preventDefault(); alert('Terima kasih! Tim kami akan segera menghubungi Anda.');">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Nama Depan *</label>
+                                    <input type="text" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="John" required />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Nama Belakang *</label>
+                                    <input type="text" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="Doe" required />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Email Perusahaan *</label>
+                                    <input type="email" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="email@perusahaan.com" required />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">No. Handphone / Whatsapp *</label>
+                                    <input type="tel" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="0812xxxxxx" required />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Nama Perusahaan *</label>
+                                    <input type="text" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="PT Maju Bersama" required />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Jabatan *</label>
+                                    <input type="text" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="Manager Operasional" required />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Industri</label>
+                                    <select class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-white">
+                                        <option>Pertambangan / Migas</option>
+                                        <option>Konstruksi</option>
+                                        <option>Keamanan / Security</option>
+                                        <option>Pabrik / Manufaktur</option>
+                                        <option>Perhotelan & Pariwisata</option>
+                                        <option>Event Organizer</option>
+                                        <option>Lainnya</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kota/Alamat</label>
+                                    <input type="text" class="w-full px-4 py-2.5 rounded-md border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="Jakarta" />
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-md transition duration-300 shadow-lg shadow-red-600/30 flex justify-center items-center gap-2 mt-4">
+                                KLAIM PROMO & KATALOG
+                            </button>
+                            <p class="text-xs text-center text-slate-500 mt-4">
+                                Data Anda aman bersama kami dan tidak akan dibagikan kepada pihak ketiga.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-slate-950 text-slate-400 pt-20 pb-10 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-blue-700 rounded flex items-center justify-center text-white">
+                            <i data-lucide="radio" class="w-5 h-5"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white tracking-tight">TMK</h2>
+                    </div>
+                    <p class="mb-6 max-w-md leading-relaxed">
+                        PT Tritunggal Mulia Komunikasi adalah distributor resmi radio dua arah merek Kenwood di Indonesia. Menyediakan berbagai jenis radio mulai dari HT, RIG, Repeater, serta layanan jasa terintegrasi.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social media icons (SVGs inside standard anchor tags) -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-6">Navigasi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="hover:text-blue-400 transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-blue-400 transition">Tentang Kami</a></li>
+                        <li><a href="#produk" class="hover:text-blue-400 transition">Produk</a></li>
+                        <li><a href="#produk" class="hover:text-blue-400 transition">Layanan</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="text-blue-500 shrink-0 mt-1 w-[18px] h-[18px]"></i>
+                            <span>Ruko Mangga Dua Square Blok G.6, Jl. Gn. Sahari No.1, Jakarta</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="text-blue-500 shrink-0 w-[18px] h-[18px]"></i>
+                            <span>0811-811-99913</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="text-blue-500 shrink-0 w-[18px] h-[18px]"></i>
+                            <span>admin@tritunggalmk.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; <span id="current-year"></span> PT TRITUNGGAL MULIA KOMUNIKASI. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Spesialis Radio Kenwood siap membantu Anda</p>
+            </div>
         </div>
     </footer>
 
-    <a href="whatsapp://send?phone=6281119727887&text=Hello%20I%20am%20interested%20in%20your%20Kenwood%20radio%20communication%20products." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <span class="whatsapp-caption">Contact Our Sales</span>
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
-    <a href="whatsapp://send?phone=6281190008781&text=Halo%20tim%20teknis%20JVCKENWOOD,%20saya%20membutuhkan%20bantuan%20mengenai%20produk%20Anda.%20(Tuliskan%20pertanyaan%20teknis%20Anda%20di%20sini)." class="engineer-float" target="_blank" rel="noopener noreferrer">
-    <span class="engineer-caption">Contact Our Engineer</span>
-    <i class="fas fa-tools"></i> 
-    </a>
+        // Update Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div class="modal-body">
-                </div>
-        </div>
-    </div>
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
-    
-    <script src="js/fuse.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/search.js"></script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Hero Image Slider Logic
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function goToSlide(index) {
+            // Update slides
+            slides[currentSlide].classList.remove('opacity-100', 'z-10');
+            slides[currentSlide].classList.add('opacity-0', 'z-0');
+            
+            currentSlide = index;
+            
+            slides[currentSlide].classList.remove('opacity-0', 'z-0');
+            slides[currentSlide].classList.add('opacity-100', 'z-10');
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.replace('bg-white/40', 'bg-blue-500');
+                    dot.classList.remove('hover:bg-white/80');
+                } else {
+                    dot.classList.replace('bg-blue-500', 'bg-white/40');
+                    dot.classList.add('hover:bg-white/80');
+                }
+            });
+
+            // Reset interval when manually clicked
+            resetInterval();
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Ganti gambar otomatis tiap 5 detik
+        }
+
+        // Start auto-slider
+        resetInterval();
+
+    </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
